@@ -3,34 +3,35 @@ import { createGlobalStyle, css, DefaultTheme } from 'styled-components'
 type GlobalStylesProps = {
   theme?: DefaultTheme
   removeBg?: boolean
+  darkMode?: boolean
 }
 
 const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     @font-face {
-      font-family: 'Poppins';
+      font-family: 'IBM Plex Sans';
       font-style: normal;
       font-weight: 300;
       font-display: swap;
-      src: local('Poppins Light'), local('Poppins-Light'),
-          url('/fonts/poppins-v12-latin-300.woff2') format('woff2');
+      src: local('IBMPlexSans Light'), local('IBMPlexSans-Light'),
+          url('/fonts/IBMPlexSans-Light.woff2') format('woff2');
     }
   
     @font-face {
-      font-family: 'Poppins';
+      font-family: 'IBM Plex Sans';
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: local('Poppins Regular'), local('Poppins-Regular'),
-          url('/fonts/poppins-v12-latin-regular.woff2') format('woff2');
+      src: local('IBMPlexSans Regular'), local('IBMPlexSans-Regular'),
+          url('/fonts/IBMPlexSans-Regular.woff2') format('woff2');
     }
   
     @font-face {
-      font-family: 'Poppins';
+      font-family: 'IBM Plex Sans';
       font-style: normal;
       font-weight: 600;
       font-display: swap;
-      src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
-          url('/fonts/poppins-v12-latin-600.woff2') format('woff2');
+      src: local('IBMPlexSans SemiBold'), local('IBMPlexSans-SemiBold'),
+          url('/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
     }
   
     * {
@@ -46,7 +47,7 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       }
     }
   
-    ${({ theme, removeBg }) => css`
+    ${({ theme, removeBg, darkMode }) => css`
       html {
         font-size: 62.5%;
       }
@@ -57,7 +58,7 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
         ${!removeBg &&
         css`
-          background-color: ${theme.colors.bg3};
+          background-color: ${theme.colors.background};
         `}
       }
     `}

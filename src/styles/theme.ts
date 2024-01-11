@@ -1,19 +1,7 @@
-export default {
-  grid: {
-    container: '130rem',
-    gutter: '3.2rem'
-  },
-  border: {
-    radius: '0.4rem'
-  },
-  sizes: {
-    appNavBarLeftWidth: 64,
-    secondarySideBarWidth: 230,
-    minViewportWidth: 1000
-  },
+const theme = {
   font: {
     family:
-      "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      'IBM Plex Sans, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif',
     light: 300,
     normal: 400,
     bold: 600,
@@ -26,43 +14,53 @@ export default {
       xxlarge: '2.8rem',
       huge: '5.2rem'
     }
-  },
-  colors: {
-    primary: '#F26122',
-    secondary: '#f67f45',
-    mainBg: '#F2F2F2',
-    lightBg: '#F2F2F2',
-    white: '#FAFAFA',
-    black: '#030517',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#2E2F42',
-    red: '#FF6347',
-    bg: 'rgb(255,255,255)',
-    bgAlpha: 'rgba(250,250,250,.3)',
-    bg2: 'rgb(245,245,245)',
-    bg3: 'rgb(230,230,230)',
-    text: 'rgb(45,45,45)'
-    // primary: 'rgb(52, 131, 235)'
-  },
-  spacings: {
-    xxsmall: '0.8rem',
-    xsmall: '1.6rem',
-    small: '2.4rem',
-    medium: '3.2rem',
-    large: '4.0rem',
-    xlarge: '4.8rem',
-    xxlarge: '5.6rem'
-  },
-  layers: {
-    base: 10,
-    menu: 20,
-    overlay: 30,
-    modal: 40,
-    alwaysOnTop: 50
-  },
-  transition: {
-    default: '0.3s ease-in-out',
-    fast: '0.1s ease-in-out'
   }
-} as const
+}
+
+export const lightTheme = Object.assign(
+  {
+    colors: {
+      primary: '#F26122',
+      secondary: '#F67F45',
+      background: '#F2F2F2',
+      font: '#000000',
+      hover: '#DEDCDC',
+      white: '#FAFAFA',
+      black: '#030517',
+      lightGray: '#DEDCDC',
+      gray: '#8F8F8F',
+      darkGray: '#2E2F42',
+      red: '#FF6347',
+      bg: 'rgb(255,255,255)',
+      bgAlpha: 'rgba(250,250,250,.3)',
+      bg2: 'rgb(245,245,245)',
+      bg3: 'rgb(230,230,230)',
+      text: 'rgb(45,45,45)'
+    }
+  },
+  theme
+)
+
+export const darkTheme = Object.assign(
+  {
+    colors: {
+      primary: '#F26122',
+      secondary: '#F67F45',
+      background: '#2E2D2D',
+      font: '#FFFFFF',
+      hover: '#4D4C4C',
+      white: '#FAFAFA',
+      black: '#030517',
+      lightGray: '#E8E8E8',
+      gray: '#8F8F8F',
+      darkGray: '#2E2F42',
+      red: '#FF6347',
+      bg: 'rgb(255,255,255)',
+      bgAlpha: 'rgba(250,250,250,.3)',
+      bg2: 'rgb(245,245,245)',
+      bg3: 'rgb(230,230,230)',
+      text: 'rgb(45,45,45)'
+    }
+  },
+  theme
+)

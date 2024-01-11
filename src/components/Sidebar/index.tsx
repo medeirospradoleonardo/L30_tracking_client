@@ -3,7 +3,7 @@ import * as S from './styles'
 
 import { AiOutlineLeft } from 'react-icons/ai'
 
-type SlementsSidebarProps = {
+type ElementsSidebarProps = {
   label: string
   icon: React.ReactNode
   to: string
@@ -12,7 +12,7 @@ type SlementsSidebarProps = {
 }
 
 type SidebarProps = {
-  elementsSidebar: SlementsSidebarProps[]
+  elementsSidebar: ElementsSidebarProps[]
   session?: boolean
   isActive?: boolean
 }

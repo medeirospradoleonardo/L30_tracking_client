@@ -1,11 +1,10 @@
-import type { Preview } from '@storybook/react'
-import React from 'react'
+import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import theme from 'styles/theme'
-import GlobalStyles from 'styles/global'
+import { lightTheme, darkTheme } from '../src/styles/theme';
+import GlobalStyles from '../src/styles/global'
 
-const preview: Preview = {
+const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -16,12 +15,14 @@ const preview: Preview = {
     }
   },
   decorators: [
-    (Story) => (
-      <ThemeProvider theme={theme}>
+    (Story) => {
+      const [isDarkMode, setIsDarkMode] = useState(false);
+      return (
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyles removeBg />
         <Story />
       </ThemeProvider>
-    )
+    )}
   ]
 }
 
