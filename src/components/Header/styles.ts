@@ -2,7 +2,7 @@ import { css, styled } from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-  height: 5vh;
+  height: 45px;
   ${({ theme }) => css`
     background-color: ${theme.colors.background};
   `}
@@ -29,8 +29,8 @@ export const Right = styled.div`
 
 export const Icon = styled.div`
   cursor: pointer;
-  height: 5vh;
-  width: 5vh;
+  height: 45px;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +39,7 @@ export const Icon = styled.div`
     &:hover {
       color: ${theme.colors.primary};
       background-color: ${theme.colors.hover};
+      transition: none;
     }
   `}
 `

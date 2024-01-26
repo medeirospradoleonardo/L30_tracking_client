@@ -3,7 +3,7 @@ import { createGlobalStyle, css, DefaultTheme } from 'styled-components'
 type GlobalStylesProps = {
   theme?: DefaultTheme
   removeBg?: boolean
-  darkMode?: boolean
+  isTransition?: boolean
 }
 
 const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
@@ -40,6 +40,14 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       box-sizing: border-box;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+
+      ${({ isTransition }) => css`
+        ${isTransition &&
+        css`
+          transition: background 0.2s ease-in;
+        `}
+      `}
   
       &::before,
       &::after{
@@ -47,7 +55,7 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       }
     }
   
-    ${({ theme, removeBg, darkMode }) => css`
+    ${({ theme, removeBg }) => css`
       html {
         font-size: 62.5%;
       }
@@ -58,7 +66,7 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
         ${!removeBg &&
         css`
-          background-color: ${theme.colors.background};
+          background: ${theme.colors.background};
         `}
       }
     `}

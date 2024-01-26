@@ -1,8 +1,4 @@
-type IconProps = {
-  name: string
-}
-
-const Icon = ({ name }: IconProps) => {
+const Icon = () => {
   return <h1>ada</h1>
 }
 

@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div<SidebarProps>`
   width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.background};
   /* height: 100vh; */
   height: 100%;
   padding: ${v.lgSpacing};
@@ -33,7 +33,8 @@ export const SidebarButton = styled.button<SidebarButtonProps>`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.bg};
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.font};
   box-shadow:
     0 0 4px ${({ theme }) => theme.colors.bg3},
     0 0 7px ${({ theme }) => theme.colors.bg};
@@ -195,6 +196,9 @@ export const LinkLabel = styled.span`
   display: block;
   flex: 1;
   margin-left: ${v.smSpacing};
+  ${({ theme }) => css`
+    color: ${theme.colors.font};
+  `}
 `
 
 export const LinkIcon = styled.div`
@@ -254,5 +258,5 @@ export const ToggleThumb = styled.div`
   transition: 0.2s ease right;
   right: calc(100% - 18px - 1px);
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.bg};
+  background: ${({ theme }) => theme.colors.background};
 `
