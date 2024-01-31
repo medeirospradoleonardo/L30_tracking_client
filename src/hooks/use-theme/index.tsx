@@ -33,6 +33,8 @@ const ThemeSwitchProvider = ({ children }: ThemeSwitchProviderProps) => {
   useEffect(() => {
     const data = getStorageItem(THEME_KEY)
 
+    // falta fazer a consulta no back da conta caso nao tenha no localStorage
+
     if (data) {
       saveTheme(data[0])
     } else {

@@ -1,6 +1,6 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from 'styled-components'
 
-export const TooltipChildren = styled.div``;
+export const TooltipChildren = styled.div``
 
 const fadeIn = keyframes`
   from {
@@ -10,7 +10,7 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
   }
-`;
+`
 
 const fadeOut = keyframes`
   from {
@@ -20,10 +20,10 @@ const fadeOut = keyframes`
   to {
     opacity: 0;
   }
-`;
+`
 
 type TooltipBoxProps = {
-  position: "bottom" | "left" | "right"
+  position: 'bottom' | 'left' | 'right'
 }
 
 export const TooltipBox = styled.span<TooltipBoxProps>`
@@ -37,19 +37,20 @@ export const TooltipBox = styled.span<TooltipBoxProps>`
   border-radius: 5px;
   padding: 10px 8px;
   font-size: 1.25rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.2);
   visibility: hidden;
-
-`;
+`
 
 type CenterContainerProps = {
-  position: "bottom" | "left" | "right"
-  limit: "right" | "left" | null
+  position: 'bottom' | 'left' | 'right'
+  limit: 'right' | 'left' | null
 }
 
 const limitModifiers = {
   left: () => css`
-    left: 0.25vw; 
+    left: 0.25vw;
   `,
   right: () => css`
     right: 0.25vw;
@@ -78,12 +79,12 @@ export const CenterContainer = styled.div<CenterContainerProps>`
   /* right: calc(-50% + 5px); // Center */ 
   ${({ position }) => {
     switch (position) {
-      case "bottom":
+      case 'bottom':
         return css`
           bottom: unset !important;
           top: calc(100% + 5px);
-        `;
-      case "left":
+        `
+      case 'left':
         return css`
           margin-right: 0;
           width: 100%;
@@ -93,33 +94,33 @@ export const CenterContainer = styled.div<CenterContainerProps>`
           width: max-content;
           margin-left: -120px;
           left: 50%;
-        `;
-      case "right":
+        `
+      case 'right':
         return css`
           margin-left: 0;
           width: 100%;
           top: 50%;
           left: calc(100% + 5px);
           width: max-content;
-        `;
+        `
       default:
         return css`
           bottom: calc(100% + 5px);
-        `;
+        `
     }
   }}
-`;
+`
 
 export const TooltipWrapper = styled.div`
   position: relative;
   display: inline-flex;
-  
-  &:hover{
-    ${TooltipBox}{
+
+  &:hover {
+    ${TooltipBox} {
       visibility: visible;
       animation: ${fadeIn} 0.5s linear;
     }
   }
-`;
+`
 
-export const TooltipText = styled.span``;
+export const TooltipText = styled.span``

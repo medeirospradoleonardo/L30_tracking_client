@@ -1,4 +1,5 @@
 import { ThemeSwitchProvider } from 'hooks/use-theme'
+import { LanguageSwitchProvider } from 'hooks/use-language'
 
 const preview = {
   parameters: {
@@ -13,10 +14,13 @@ const preview = {
   decorators: [
     (Story) => {
       return (
-      <ThemeSwitchProvider>
-        <Story />
-      </ThemeSwitchProvider>
-    )}
+        <LanguageSwitchProvider>
+          <ThemeSwitchProvider>
+            <Story />
+          </ThemeSwitchProvider>
+        </LanguageSwitchProvider>
+      )
+    }
   ]
 }
 

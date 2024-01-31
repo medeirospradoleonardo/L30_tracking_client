@@ -11,10 +11,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    content: "Content Tooltip", 
-    position: "bottom", 
-    children: <span>Tooltip</span>,
-    limit: 'left'
+    content: 'Content Tooltip',
+    limit: 'left',
+    position: 'bottom',
+    children: <span>Tooltip</span>
   }
 } satisfies Meta<typeof Tooltip>
 
