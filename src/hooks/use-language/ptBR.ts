@@ -6,7 +6,8 @@ const languagesPT_BR = {
     Header: {
       tooltipLight: 'Modo Claro',
       tooltipDark: 'Modo Escuro',
-      tooltipLanguageSwitch: 'Mudar idioma'
+      tooltipLanguageSwitch: 'Mudar idioma',
+      modalLanguage: 'Escolha o seu idioma'
     }
   }
 } as LanguageType

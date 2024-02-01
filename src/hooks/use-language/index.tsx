@@ -7,16 +7,32 @@ import { LanguageType } from './languageType'
 
 const LANGUAGE_KEY = 'language'
 
-type Languages = 'pt-BR' | 'en-US' | null
+type Language = 'pt-BR' | 'en-US'
 
 export type LanguageSwitchData = {
-  saveLanguage: (language: Languages) => void
+  saveLanguage: (language: Language) => void
   language: LanguageType
+  getLanguages: {
+    label: string
+    value: Language
+  }[]
+  getLanguageValue: Language
 }
 
 export const LanguageSwitchDefaultValues = {
   saveLanguage: () => null,
-  language: languagesPT_BR
+  language: languagesPT_BR,
+  getLanguages: [
+    {
+      label: 'Português (Brasil)',
+      value: 'pt-BR' as Language
+    },
+    {
+      label: 'English',
+      value: 'en-US' as Language
+    }
+  ],
+  getLanguageValue: 'pt-BR' as Language
 }
 
 export const LanguageSwitchContext = createContext<LanguageSwitchData>(
@@ -28,7 +44,7 @@ export type LanguageSwitchProviderProps = {
 }
 
 const LanguageSwitchProvider = ({ children }: LanguageSwitchProviderProps) => {
-  const [language, setLanguage] = useState<Languages>(null)
+  const [language, setLanguage] = useState<Language>('pt-BR')
 
   useEffect(() => {
     const data = getStorageItem(LANGUAGE_KEY)
@@ -46,7 +62,7 @@ const LanguageSwitchProvider = ({ children }: LanguageSwitchProviderProps) => {
     }
   }, [])
 
-  const saveLanguage = (language: Languages) => {
+  const saveLanguage = (language: Language) => {
     const newLanguage = language == 'pt-BR' ? 'pt-BR' : 'en-US'
     setLanguage(newLanguage)
     setStorageItem(LANGUAGE_KEY, [newLanguage])
@@ -56,7 +72,18 @@ const LanguageSwitchProvider = ({ children }: LanguageSwitchProviderProps) => {
     <LanguageSwitchContext.Provider
       value={{
         saveLanguage,
-        language: language == 'pt-BR' ? languagesPT_BR : languagesEN_US
+        language: language == 'pt-BR' ? languagesPT_BR : languagesEN_US,
+        getLanguages: [
+          {
+            label: 'Português (Brasil)',
+            value: 'pt-BR'
+          },
+          {
+            label: 'English',
+            value: 'en-US'
+          }
+        ],
+        getLanguageValue: language
       }}
     >
       {children}

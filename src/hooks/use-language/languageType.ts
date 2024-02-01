@@ -5,6 +5,7 @@ export type LanguageType = {
       tooltipLight: string
       tooltipDark: string
       tooltipLanguageSwitch: string
+      modalLanguage: string
     }
   }
 }

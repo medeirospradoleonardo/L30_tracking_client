@@ -1,41 +1,13 @@
 import { css, styled } from 'styled-components'
 
-// export const Wrapper = styled.div`
-//   background-color: rgba(0, 0, 0, 0.1);
-//   width: 100vw;
-//   height: 100vh;
-//   z-index: 0;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   position: absolute;
-// `
-
-// export const Modal = styled.div`
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-
-//   width: 250px;
-//   height: 170px;
-//   background: white;
-//   color: black;
-//   z-index: 10;
-//   border-radius: 16px;
-//   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-// `
-
 export const Modal = styled.div`
   ${({ theme }) => css`
-    /* display: flex; */
-    /* flex-direction: column; */
-    background: ${theme.colors.white};
-    color: ${theme.colors.black};
+    background: ${theme.colors.background};
+    color: ${theme.colors.font};
 
-    width: 250px;
-    height: 170px;
-    /* position: fixed; */
+    /* min-width: 350px; */
+    /* min-height: 270px; */
+
     top: 50%;
     left: 50%;
 
@@ -91,5 +63,52 @@ export const Wrapper = styled.div<WrapperProps>`
       ${open && wrapperModifiers.open()}
       ${!open && wrapperModifiers.close()}
     }
+  `}
+`
+
+export const ModalHeader = styled.div`
+  width: 100%;
+  ${({ theme }) => css`
+    background-color: ${theme.colors.background};
+  `}
+  display: flex;
+  padding: 10px;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+`
+
+export const Icon = styled.div`
+  cursor: pointer;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
+    &:hover {
+      color: ${theme.colors.primary};
+      transition: none;
+    }
+  `}
+`
+
+export const Left = styled.div`
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ theme }) => css`
+    color: ${theme.colors.font};
+  `}
+`
+
+export const Right = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ theme }) => css`
+    color: ${theme.colors.font};
   `}
 `

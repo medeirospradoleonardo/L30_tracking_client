@@ -6,19 +6,21 @@ import { HiOutlineSun, HiOutlineMoon, HiOutlineGlobeAlt } from 'react-icons/hi2'
 import Tooltip from 'components/Tooltip'
 import { useState } from 'react'
 import Modal from 'components/Modal'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
-  const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
+  const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(true)
   const { language } = useLanguage()
 
   return (
     <>
       <Modal
         isOpen={isOpenModalLanguage}
-        onRequestClose={() => setIsOpenModalLanguage(false)}
+        title={language.components.Header.modalLanguage}
+        closeModal={() => setIsOpenModalLanguage(false)}
       >
-        <h1>oi</h1>
+        <LanguageSwitch closeModal={() => setIsOpenModalLanguage(false)} />
       </Modal>
       <S.Container onKeyDown={(e) => console.log(e)}>
         <S.Left>Logo</S.Left>

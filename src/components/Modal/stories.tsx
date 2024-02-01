@@ -11,6 +11,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
+    title: 'Modal title',
     isOpen: true,
     children: <h1>Dentro</h1>
   }

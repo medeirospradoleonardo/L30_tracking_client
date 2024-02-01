@@ -6,7 +6,8 @@ const languagesEN_US = {
     Header: {
       tooltipLight: 'Light Mode',
       tooltipDark: 'Dark Mode',
-      tooltipLanguageSwitch: 'Change language'
+      tooltipLanguageSwitch: 'Change language',
+      modalLanguage: 'Choose your language'
     }
   }
 } as LanguageType
