@@ -8,6 +8,7 @@ function App({ Component, pageProps }: AppProps) {
     <LanguageSwitchProvider>
       <ThemeSwitchProvider>
         <Head>
+          <html lang="pt-BR" />
           <title>L30</title>
           <link rel="shortcut icon" href="/img/icon-512.png" />
           <link rel="apple-touch-icon" href="/img/icon-512.png" />

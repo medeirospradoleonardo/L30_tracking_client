@@ -5,7 +5,8 @@ const languagesPT_BR = {
   components: {
     Header: {
       tooltipLight: 'Modo Claro',
-      tooltipDark: 'Modo Escuro'
+      tooltipDark: 'Modo Escuro',
+      tooltipLanguageSwitch: 'Mudar idioma'
     }
   }
 } as LanguageType

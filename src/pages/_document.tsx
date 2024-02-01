@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en-US">
+      <Html lang={this.props.locale}>
         <Head />
         <body>
           <Main />

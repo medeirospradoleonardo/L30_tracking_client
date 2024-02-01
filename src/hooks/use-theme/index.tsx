@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { StyleSheetManager, ThemeProvider } from 'styled-components'
 import { darkTheme, lightTheme } from 'styles/theme'
 import GlobalStyles from 'styles/global'
 import { getStorageItem, setStorageItem } from 'utils/localStorage'
@@ -67,10 +67,12 @@ const ThemeSwitchProvider = ({ children }: ThemeSwitchProviderProps) => {
         isDarkMode: theme == 'Dark'
       }}
     >
-      <ThemeProvider theme={theme == 'Dark' ? darkTheme : lightTheme}>
-        <GlobalStyles isTransition={isTransition} />
-        {children}
-      </ThemeProvider>
+      <StyleSheetManager shouldForwardProp={() => true}>
+        <ThemeProvider theme={theme == 'Dark' ? darkTheme : lightTheme}>
+          <GlobalStyles isTransition={isTransition} />
+          {children}
+        </ThemeProvider>
+      </StyleSheetManager>
     </ThemeSwitchContext.Provider>
   )
 }

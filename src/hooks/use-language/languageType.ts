@@ -4,6 +4,7 @@ export type LanguageType = {
     Header: {
       tooltipLight: string
       tooltipDark: string
+      tooltipLanguageSwitch: string
     }
   }
 }

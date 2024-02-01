@@ -5,7 +5,8 @@ const languagesEN_US = {
   components: {
     Header: {
       tooltipLight: 'Light Mode',
-      tooltipDark: 'Dark Mode'
+      tooltipDark: 'Dark Mode',
+      tooltipLanguageSwitch: 'Change language'
     }
   }
 } as LanguageType

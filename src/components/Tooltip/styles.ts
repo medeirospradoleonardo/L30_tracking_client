@@ -56,7 +56,7 @@ const limitModifiers = {
     right: 0.25vw;
   `,
   center: () => css`
-    right: calc(-50% + 5px);
+    right: -50%;
   `
 }
 
