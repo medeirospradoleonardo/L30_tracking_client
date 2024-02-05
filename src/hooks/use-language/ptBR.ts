@@ -8,6 +8,9 @@ const languagesPT_BR = {
       tooltipDark: 'Modo Escuro',
       tooltipLanguageSwitch: 'Mudar idioma',
       modalLanguage: 'Escolha o seu idioma'
+    },
+    AlertList: {
+      messageEmpty: 'Sem nenhuma notificação'
     }
   }
 } as LanguageType

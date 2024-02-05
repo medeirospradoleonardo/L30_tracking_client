@@ -7,10 +7,11 @@ import Tooltip from 'components/Tooltip'
 import { useState } from 'react'
 import Modal from 'components/Modal'
 import LanguageSwitch from 'components/LanguageSwitch'
+import AlertDropdown from 'components/AlertDropdown'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
-  const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(true)
+  const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
   const { language } = useLanguage()
 
   return (
@@ -25,6 +26,7 @@ const Header = () => {
       <S.Container onKeyDown={(e) => console.log(e)}>
         <S.Left>Logo</S.Left>
         <S.Right>
+          <AlertDropdown />
           <Tooltip
             content={language.components.Header.tooltipLanguageSwitch}
             position="bottom"
@@ -50,7 +52,7 @@ const Header = () => {
               limit="right"
             >
               <S.Icon onClick={() => saveTheme('Dark', true)}>
-                <HiOutlineMoon size={23} />
+                <HiOutlineMoon size={25} />
               </S.Icon>
             </Tooltip>
           )}

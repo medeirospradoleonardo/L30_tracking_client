@@ -7,5 +7,8 @@ export type LanguageType = {
       tooltipLanguageSwitch: string
       modalLanguage: string
     }
+    AlertList: {
+      messageEmpty: string
+    }
   }
 }

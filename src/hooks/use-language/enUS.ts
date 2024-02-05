@@ -8,6 +8,9 @@ const languagesEN_US = {
       tooltipDark: 'Dark Mode',
       tooltipLanguageSwitch: 'Change language',
       modalLanguage: 'Choose your language'
+    },
+    AlertList: {
+      messageEmpty: 'Without any notifications'
     }
   }
 } as LanguageType

@@ -10,19 +10,17 @@ const LanguageSwitch = ({ closeModal }: LanguageSwitchProps) => {
   return (
     <S.Container>
       {getLanguages.map((language, index) => (
-        <>
-          <S.LanguageContainer
-            key={index}
-            onClick={() => {
-              saveLanguage(language.value)
-              closeModal()
-            }}
-          >
-            <S.LanguageLabel selected={getLanguageValue == language.value}>
-              {language.label}
-            </S.LanguageLabel>
-          </S.LanguageContainer>
-        </>
+        <S.LanguageContainer
+          key={`${language.value}-${index}`}
+          onClick={() => {
+            saveLanguage(language.value)
+            closeModal()
+          }}
+        >
+          <S.LanguageLabel selected={getLanguageValue == language.value}>
+            {language.label}
+          </S.LanguageLabel>
+        </S.LanguageContainer>
       ))}
     </S.Container>
   )
