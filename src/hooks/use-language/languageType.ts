@@ -9,6 +9,9 @@ export type LanguageType = {
     }
     AlertList: {
       messageEmpty: string
+      headerTitle: string
+      headerAllRead: string
+      notLogged: string
     }
   }
 }

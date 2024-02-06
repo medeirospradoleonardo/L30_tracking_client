@@ -85,7 +85,7 @@ export const Icon = styled.div`
   align-items: center;
   justify-content: center;
   ${({ theme }) => css`
-    color: ${theme.colors.gray};
+    color: ${theme.colors.darkGray};
     &:hover {
       color: ${theme.colors.primary};
       transition: none;

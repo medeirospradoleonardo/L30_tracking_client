@@ -6,8 +6,7 @@ export const Title = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    /* padding-right: 2.4rem; */
-    /* z-index: ${theme.layers.alwaysOnTop}; */
+    color: ${theme.colors.font};
   `}
 `
 
@@ -19,8 +18,7 @@ export const Content = styled.div`
     margin-top: ${theme.spacings.small};
     position: absolute;
     right: 0;
-    /* z-index: ${theme.layers.alwaysOnTop}; */
-    top: 2.5rem;
+    top: 2.1rem;
     cursor: pointer;
     border-radius: 5px;
     background: ${theme.colors.bg};
@@ -28,15 +26,12 @@ export const Content = styled.div`
 `
 
 export const Overlay = styled.div`
-  ${({ theme }) => css`
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* z-index: ${theme.layers.base}; */
-  `}
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `
 
 type WrapperProps = {
@@ -60,6 +55,13 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, open }) => css`
     position: relative;
     width: max-content;
+    &:hover {
+      ${Title} {
+        color: ${theme.colors.primary};
+        background: ${theme.colors.hover};
+        transition: none;
+      }
+    }
 
     ${Content}, ${Overlay} {
       transition:

@@ -10,7 +10,10 @@ const languagesEN_US = {
       modalLanguage: 'Choose your language'
     },
     AlertList: {
-      messageEmpty: 'Without any notifications'
+      messageEmpty: 'Without any notifications',
+      headerTitle: 'Notifications',
+      headerAllRead: 'Mark all as read',
+      notLogged: 'You need to be logged in to see notifications'
     }
   }
 } as LanguageType

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Icon = styled.div`
   cursor: pointer;
@@ -7,13 +7,5 @@ export const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ theme }) => css`
-    color: ${theme.colors.font};
-
-    &:hover {
-      color: ${theme.colors.primary};
-      background-color: ${theme.colors.hover};
-      transition: none;
-    }
-  `}
+  opacity: 1;
 `

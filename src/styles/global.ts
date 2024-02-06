@@ -69,6 +69,20 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
           background: ${theme.colors.background};
         `}
       }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: ${theme.colors.darkGray};
+        border-radius: 5px;
+        margin-right: 2px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: ${theme.colors.gray};
+        maxheight: 10px;
+      }
     `}
   `
 

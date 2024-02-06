@@ -10,7 +10,10 @@ const languagesPT_BR = {
       modalLanguage: 'Escolha o seu idioma'
     },
     AlertList: {
-      messageEmpty: 'Sem nenhuma notificação'
+      messageEmpty: 'Sem nenhuma notificação',
+      headerTitle: 'Notificações',
+      headerAllRead: 'Marcar tudo como lido',
+      notLogged: 'Você precisa estar logado para ver as notificações'
     }
   }
 } as LanguageType

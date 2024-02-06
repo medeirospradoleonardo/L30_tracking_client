@@ -9,7 +9,7 @@ const AlertIcon = ({ quantity = 1 }: AlertIconProps) => {
   return (
     <S.Wrapper>
       {quantity > 0 && (
-        <S.Badge aria-label="Cart Items" overflow={quantity > 99}>
+        <S.Badge aria-label="Cart Items" overflow={(quantity > 99).toString()}>
           {quantity > 99 ? '99+' : quantity}
         </S.Badge>
       )}

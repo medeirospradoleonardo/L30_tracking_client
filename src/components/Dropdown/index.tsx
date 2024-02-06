@@ -7,20 +7,20 @@ export type DropdownProps = {
 }
 
 const Dropdown = ({ title, children }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <S.Wrapper open={isOpen}>
       <S.Title
-      // onMouseOver={() => setIsOpen(true)}
-      // onMouseLeave={() => setIsOpen(false)}
+        onMouseOver={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
       >
         {title}
       </S.Title>
 
       <S.Content
-        // onMouseOver={() => setIsOpen(true)}
-        // onMouseLeave={() => setIsOpen(false)}
+        onMouseOver={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
         aria-hidden={!isOpen}
       >
         {children}

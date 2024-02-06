@@ -23,7 +23,7 @@ const Header = () => {
       >
         <LanguageSwitch closeModal={() => setIsOpenModalLanguage(false)} />
       </Modal>
-      <S.Container onKeyDown={(e) => console.log(e)}>
+      <S.Container>
         <S.Left>Logo</S.Left>
         <S.Right>
           <AlertDropdown />
