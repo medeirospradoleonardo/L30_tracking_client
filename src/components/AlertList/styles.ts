@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
+  cursor: default;
 
   justify-content: center;
   align-items: center;
@@ -58,7 +59,8 @@ export const AllRead = styled.div`
     color: ${theme.colors.primary};
     font-size: ${theme.font.sizes.xsmall};
     margin-left: auto;
-    padding-right: 20px;
+    margin-right: 20px;
+    cursor: pointer;
 
     &:hover {
       color: ${darken(0.1, theme.colors.primary)};
@@ -98,7 +100,7 @@ const alertListContainerModifiers = {
 export const AlertListContainer = styled.div<AlertListContainerProps>`
   ${({ quantity }) => css`
     width: 100%;
-
+    cursor: pointer;
     ${quantity == 0 && alertListContainerModifiers.empty()}
     ${quantity == 1 && alertListContainerModifiers.one()}
     ${quantity == 2 && alertListContainerModifiers.two()}

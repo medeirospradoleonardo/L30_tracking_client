@@ -75,12 +75,12 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       }
 
       &::-webkit-scrollbar-thumb {
-        background: ${theme.colors.darkGray};
+        background: ${theme.colors.scroll};
         border-radius: 5px;
         margin-right: 2px;
       }
       &::-webkit-scrollbar-thumb:hover {
-        background: ${theme.colors.gray};
+        background: ${theme.colors.scrollHover};
         maxheight: 10px;
       }
     `}
