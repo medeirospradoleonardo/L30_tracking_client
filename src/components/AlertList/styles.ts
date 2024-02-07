@@ -1,4 +1,3 @@
-import { Icon as AlertDropdownIcon } from 'components/AlertDropdown/styles'
 import styled, { DefaultTheme, css } from 'styled-components'
 
 import { darken } from 'polished'
@@ -26,14 +25,6 @@ export const Container = styled.div`
       border-bottom: 1.2rem solid ${theme.colors.bg};
       top: -1rem;
       right: 1rem;
-    }
-
-    &:hover {
-      ${AlertDropdownIcon} {
-        color: ${theme.colors.primary};
-        background-color: ${theme.colors.hover};
-        transition: none;
-      }
     }
   `}
 `
@@ -110,6 +101,7 @@ export const AlertListContainer = styled.div<AlertListContainerProps>`
 
 type AlertContainerProps = {
   read: string
+  remove: string
 }
 
 const alertContainerModifiers = {
@@ -119,7 +111,7 @@ const alertContainerModifiers = {
 }
 
 export const AlertContainer = styled.div<AlertContainerProps>`
-  ${({ theme, read }) => css`
+  ${({ theme, read, remove }) => css`
     height: 100px;
     display: flex;
     align-items: center;
@@ -132,11 +124,6 @@ export const AlertContainer = styled.div<AlertContainerProps>`
     &:hover {
       background: ${theme.colors.gray};
 
-      ${AlertDropdownIcon} {
-        color: ${theme.colors.primary};
-        background-color: ${theme.colors.hover};
-        transition: none;
-      }
       ${AlertTime} {
         color: ${theme.colors.primary};
         font-size: ${theme.font.sizes.small};
@@ -144,7 +131,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
         height: auto;
 
         &::before {
-          content: 'Excluir';
+          content: '${remove}';
         }
 
         &:hover {

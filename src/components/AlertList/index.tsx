@@ -46,7 +46,10 @@ const AlertList = () => {
             <>
               {alerts.map((alert, index) => (
                 <div key={`${alert.title}-${index}`}>
-                  <S.AlertContainer read={alert.read.toString()}>
+                  <S.AlertContainer
+                    read={alert.read.toString()}
+                    remove={language.components.AlertList.deleteButton}
+                  >
                     <S.AlertIcon>
                       <HiTruck size={40} />
                     </S.AlertIcon>

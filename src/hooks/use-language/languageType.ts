@@ -12,6 +12,7 @@ export type LanguageType = {
       headerTitle: string
       headerAllRead: string
       notLogged: string
+      deleteButton: string
     }
   }
 }

@@ -13,7 +13,8 @@ const languagesPT_BR = {
       messageEmpty: 'Sem nenhuma notificação',
       headerTitle: 'Notificações',
       headerAllRead: 'Marcar tudo como lido',
-      notLogged: 'Você precisa estar logado para ver as notificações'
+      notLogged: 'Você precisa estar logado para ver as notificações',
+      deleteButton: 'Excluir'
     }
   }
 } as LanguageType

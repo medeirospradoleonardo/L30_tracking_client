@@ -73,7 +73,6 @@ export const ModalHeader = styled.div`
   `}
   display: flex;
   padding: 10px;
-  /* padding: 5px 10px; */
   border-radius: 5px;
 `
 

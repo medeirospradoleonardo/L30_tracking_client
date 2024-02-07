@@ -13,7 +13,8 @@ const languagesEN_US = {
       messageEmpty: 'Without any notifications',
       headerTitle: 'Notifications',
       headerAllRead: 'Mark all as read',
-      notLogged: 'You need to be logged in to see notifications'
+      notLogged: 'You need to be logged in to see notifications',
+      deleteButton: 'Remove'
     }
   }
 } as LanguageType
