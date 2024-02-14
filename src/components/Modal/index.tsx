@@ -28,7 +28,7 @@ const Modal = ({ children, title, isOpen, closeModal }: ModalProps) => {
   // }
 
   return (
-    <S.Wrapper open={isOpen}>
+    <S.Wrapper $isOpen={isOpen}>
       <S.Overlay aria-hidden={!isOpen} onClick={closeModal}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <S.ModalHeader>

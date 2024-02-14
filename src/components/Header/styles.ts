@@ -8,7 +8,6 @@ export const Container = styled.div`
   `}
   display: flex;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
-  position: fixed;
 `
 
 export const Left = styled.div`

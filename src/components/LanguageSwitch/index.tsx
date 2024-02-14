@@ -17,7 +17,7 @@ const LanguageSwitch = ({ closeModal }: LanguageSwitchProps) => {
             closeModal()
           }}
         >
-          <S.LanguageLabel selected={getLanguageValue == language.value}>
+          <S.LanguageLabel $selected={getLanguageValue == language.value}>
             {language.label}
           </S.LanguageLabel>
         </S.LanguageContainer>

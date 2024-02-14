@@ -40,15 +40,15 @@ const AlertList = () => {
         )}
       </S.Header>
       <Divider />
-      <S.AlertListContainer quantity={logged ? alerts.length : 0}>
+      <S.AlertListContainer $quantity={logged ? alerts.length : 0}>
         {logged ? (
           alerts.length > 0 ? (
             <>
               {alerts.map((alert, index) => (
                 <div key={`${alert.title}-${index}`}>
                   <S.AlertContainer
-                    read={alert.read.toString()}
-                    remove={language.components.AlertList.deleteButton}
+                    $isRead={alert.read}
+                    $remove={language.components.AlertList.deleteButton}
                   >
                     <S.AlertIcon>
                       <HiTruck size={40} />
@@ -60,7 +60,7 @@ const AlertList = () => {
                       </S.AlertDescription>
                     </div>
                     <S.AlertTime
-                      time={alert.time}
+                      $time={alert.time}
                       // onClick={() => console.log()}
                     />
                   </S.AlertContainer>

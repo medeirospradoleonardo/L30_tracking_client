@@ -23,7 +23,7 @@ const fadeOut = keyframes`
 `
 
 type TooltipBoxProps = {
-  position: 'bottom' | 'left' | 'right'
+  $position: 'bottom' | 'left' | 'right'
 }
 
 export const TooltipBox = styled.span<TooltipBoxProps>`
@@ -31,10 +31,10 @@ export const TooltipBox = styled.span<TooltipBoxProps>`
 
   ${({ theme }) => css`
     background-color: ${theme.colors.tooltip};
+    border-radius: ${theme.border.radius};
   `}
   color: #fff;
   text-align: center;
-  border-radius: 5px;
   padding: 10px 8px;
   font-size: 1.25rem;
   box-shadow:
@@ -44,8 +44,8 @@ export const TooltipBox = styled.span<TooltipBoxProps>`
 `
 
 type CenterContainerProps = {
-  position: 'bottom' | 'left' | 'right'
-  limit: 'right' | 'left' | null
+  $position: 'bottom' | 'left' | 'right'
+  $limit: 'right' | 'left' | null
 }
 
 const limitModifiers = {
@@ -68,17 +68,17 @@ export const CenterContainer = styled.div<CenterContainerProps>`
   pointer-events: none;
   display: flex;
 
-  ${({ limit }) => css`
-    ${limit == 'left' && limitModifiers.left()}
-    ${limit == 'right' && limitModifiers.right()}
-    ${limit == null && limitModifiers.center()}
+  ${({ $limit }) => css`
+    ${$limit == 'left' && limitModifiers.left()}
+    ${$limit == 'right' && limitModifiers.right()}
+    ${$limit == null && limitModifiers.center()}
   `}
 
   /* left: 0.25vw; // Left */
   /* right: 0.25vw; // Right */
   /* right: calc(-50% + 5px); // Center */ 
-  ${({ position }) => {
-    switch (position) {
+  ${({ $position }) => {
+    switch ($position) {
       case 'bottom':
         return css`
           bottom: unset !important;

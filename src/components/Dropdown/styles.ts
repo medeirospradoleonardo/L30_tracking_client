@@ -20,7 +20,7 @@ export const Content = styled.div`
     right: 0;
     top: 2.1rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: ${theme.border.radius};
     background: ${theme.colors.bg};
   `}
 `
@@ -35,7 +35,7 @@ export const Overlay = styled.div`
 `
 
 type WrapperProps = {
-  open?: boolean
+  $isOpen?: boolean
 }
 
 const wrapperModifiers = {
@@ -52,7 +52,7 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, open }) => css`
+  ${({ theme, $isOpen }) => css`
     position: relative;
     width: max-content;
     &:hover {
@@ -68,8 +68,8 @@ export const Wrapper = styled.div<WrapperProps>`
         transform 0.2s ease-in,
         opacity ${theme.transition.default};
 
-      ${open && wrapperModifiers.open()}
-      ${!open && wrapperModifiers.close()}
+      ${$isOpen && wrapperModifiers.open()}
+      ${!$isOpen && wrapperModifiers.close()}
     }
   `}
 `

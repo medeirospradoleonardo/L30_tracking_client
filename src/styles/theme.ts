@@ -1,4 +1,7 @@
 const theme = {
+  border: {
+    radius: '0.4rem'
+  },
   font: {
     family:
       'IBM Plex Sans, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif',
@@ -46,12 +49,16 @@ export const lightTheme = Object.assign(
       tooltip: '#393E46',
       font: '#000000',
       fontOp: '#FFFFFF',
+      fontSecondary: '#757575',
       hover: '#DEDCDC',
       white: '#FAFAFA',
       black: '#030517',
       lightGray: '#F1F1F1',
       gray: '#E3E2E2',
       darkGray: '#ADADAD',
+      warning: '#F1C40F',
+      error: '#E74C3C',
+      success: '#07BC0C',
       scroll: '#ADADAD',
       scrollHover: '#7D7D7D',
       red: '#FF6347',
@@ -74,12 +81,16 @@ export const darkTheme = Object.assign(
       tooltip: '#393E46',
       font: '#FFFFFF',
       fontOp: '#000000',
+      fontSecondary: '#ADADAD',
       hover: '#4D4C4C',
       white: '#FAFAFA',
       black: '#030517',
       lightGray: '#6E6D6D',
       gray: '#595959',
       darkGray: '#ADADAD',
+      warning: '#F1C40F',
+      error: '#E74C3C',
+      success: '#07BC0C',
       scroll: '#ADADAD',
       scrollHover: '#595959',
       red: '#FF6347',

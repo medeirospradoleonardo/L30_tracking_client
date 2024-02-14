@@ -22,11 +22,11 @@ type Story = StoryObj<typeof meta>
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 
 export const Desktop = {
-  render: () => <MediaMatch greaterThan="medium">Only on Desktop</MediaMatch>
+  render: () => <MediaMatch $greaterThan="medium">Only on Desktop</MediaMatch>
 } satisfies Story
 
 export const Mobile = {
-  render: () => <MediaMatch lessThan="medium">Only on Mobile</MediaMatch>,
+  render: () => <MediaMatch $lessThan="medium">Only on Mobile</MediaMatch>,
   parameters: {
     viewport: {
       defaultViewport: 'mobile1'

@@ -5,15 +5,12 @@ export const Modal = styled.div`
     background: ${theme.colors.background};
     color: ${theme.colors.font};
 
-    /* min-width: 350px; */
-    /* min-height: 270px; */
-
     top: 50%;
     left: 50%;
 
-    border-radius: 5px;
+    border-radius: ${theme.border.radius};
 
-    z-index: ${theme.layers.alwaysOnTop};
+    z-index: ${theme.layers.modal};
   `}
 `
 
@@ -33,7 +30,7 @@ export const Overlay = styled.div`
 `
 
 type WrapperProps = {
-  open?: boolean
+  $isOpen?: boolean
 }
 
 const wrapperModifiers = {
@@ -50,7 +47,7 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, open }) => css`
+  ${({ theme, $isOpen }) => css`
     position: relative;
     width: max-content;
 
@@ -60,8 +57,8 @@ export const Wrapper = styled.div<WrapperProps>`
         transform 0.2s ease-out,
         opacity ${theme.transition.default};
 
-      ${open && wrapperModifiers.open()}
-      ${!open && wrapperModifiers.close()}
+      ${$isOpen && wrapperModifiers.open()}
+      ${!$isOpen && wrapperModifiers.close()}
     }
   `}
 `
@@ -70,10 +67,10 @@ export const ModalHeader = styled.div`
   width: 100%;
   ${({ theme }) => css`
     background-color: ${theme.colors.background};
+    border-radius: ${theme.border.radius};
   `}
   display: flex;
   padding: 10px;
-  border-radius: 5px;
 `
 
 export const Icon = styled.div`

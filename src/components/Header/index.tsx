@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Modal from 'components/Modal'
 import LanguageSwitch from 'components/LanguageSwitch'
 import AlertDropdown from 'components/AlertDropdown'
+import Button from 'components/Button'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
@@ -15,7 +16,7 @@ const Header = () => {
   const { language } = useLanguage()
 
   return (
-    <>
+    <S.Container>
       <Modal
         isOpen={isOpenModalLanguage}
         title={language.components.Header.modalLanguage}
@@ -23,42 +24,41 @@ const Header = () => {
       >
         <LanguageSwitch closeModal={() => setIsOpenModalLanguage(false)} />
       </Modal>
-      <S.Container>
-        <S.Left>Logo</S.Left>
-        <S.Right>
-          <AlertDropdown />
+      <S.Left>Logo</S.Left>
+      <S.Right>
+        {/* <Button size="small">Entrar</Button> */}
+        <AlertDropdown />
+        <Tooltip
+          content={language.components.Header.tooltipLanguageSwitch}
+          position="bottom"
+        >
+          <S.Icon onClick={() => setIsOpenModalLanguage(true)}>
+            <HiOutlineGlobeAlt size={25} />
+          </S.Icon>
+        </Tooltip>
+        {isDarkMode ? (
           <Tooltip
-            content={language.components.Header.tooltipLanguageSwitch}
+            content={language.components.Header.tooltipLight}
             position="bottom"
+            limit="right"
           >
-            <S.Icon onClick={() => setIsOpenModalLanguage(true)}>
-              <HiOutlineGlobeAlt size={25} />
+            <S.Icon onClick={() => saveTheme('Light', true)}>
+              <HiOutlineSun size={25} />
             </S.Icon>
           </Tooltip>
-          {isDarkMode ? (
-            <Tooltip
-              content={language.components.Header.tooltipLight}
-              position="bottom"
-              limit="right"
-            >
-              <S.Icon onClick={() => saveTheme('Light', true)}>
-                <HiOutlineSun size={25} />
-              </S.Icon>
-            </Tooltip>
-          ) : (
-            <Tooltip
-              content={language.components.Header.tooltipDark}
-              position="bottom"
-              limit="right"
-            >
-              <S.Icon onClick={() => saveTheme('Dark', true)}>
-                <HiOutlineMoon size={25} />
-              </S.Icon>
-            </Tooltip>
-          )}
-        </S.Right>
-      </S.Container>
-    </>
+        ) : (
+          <Tooltip
+            content={language.components.Header.tooltipDark}
+            position="bottom"
+            limit="right"
+          >
+            <S.Icon onClick={() => saveTheme('Dark', true)}>
+              <HiOutlineMoon size={25} />
+            </S.Icon>
+          </Tooltip>
+        )}
+      </S.Right>
+    </S.Container>
   )
 }
 

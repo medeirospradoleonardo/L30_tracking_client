@@ -76,7 +76,7 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
       &::-webkit-scrollbar-thumb {
         background: ${theme.colors.scroll};
-        border-radius: 5px;
+        border-radius: ${theme.border.radius};
         margin-right: 2px;
       }
       &::-webkit-scrollbar-thumb:hover {

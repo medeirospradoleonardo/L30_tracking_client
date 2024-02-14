@@ -22,7 +22,7 @@ export const LanguageContainer = styled.div`
   &:hover {
     ${({ theme }) => css`
       background-color: ${rgba(theme.colors.primary, 0.2)};
-      border-radius: 5px;
+      border-radius: ${theme.border.radius};
     `}
   }
 
@@ -32,7 +32,7 @@ export const LanguageContainer = styled.div`
 export const LanguageIcon = styled.div``
 
 type LanguageLabelProps = {
-  selected: boolean
+  $selected: boolean
 }
 
 const LanguageLabelModifiers = {
@@ -42,9 +42,9 @@ const LanguageLabelModifiers = {
 }
 
 export const LanguageLabel = styled.span<LanguageLabelProps>`
-  ${({ theme, selected }) => css`
+  ${({ theme, $selected }) => css`
     color: ${theme.colors.font};
-    ${selected && LanguageLabelModifiers.selected(theme)}
+    ${$selected && LanguageLabelModifiers.selected(theme)}
     font-size: ${theme.font.sizes.medium};
   `}
 `

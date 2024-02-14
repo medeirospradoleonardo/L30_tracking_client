@@ -11,11 +11,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  border-radius: 5px;
   box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
 
   ${({ theme }) => css`
     background: ${theme.colors.bg};
+    border-radius: ${theme.border.radius};
 
     &::before {
       content: '';
@@ -66,7 +66,7 @@ export const Empty = styled.div`
 `
 
 type AlertListContainerProps = {
-  quantity: number
+  $quantity: number
 }
 
 const alertListContainerModifiers = {
@@ -89,19 +89,19 @@ const alertListContainerModifiers = {
 }
 
 export const AlertListContainer = styled.div<AlertListContainerProps>`
-  ${({ quantity }) => css`
+  ${({ $quantity }) => css`
     width: 100%;
     cursor: pointer;
-    ${quantity == 0 && alertListContainerModifiers.empty()}
-    ${quantity == 1 && alertListContainerModifiers.one()}
-    ${quantity == 2 && alertListContainerModifiers.two()}
-    ${quantity >= 3 && alertListContainerModifiers.threeMore()}
+    ${$quantity == 0 && alertListContainerModifiers.empty()}
+    ${$quantity == 1 && alertListContainerModifiers.one()}
+    ${$quantity == 2 && alertListContainerModifiers.two()}
+    ${$quantity >= 3 && alertListContainerModifiers.threeMore()}
   `}
 `
 
 type AlertContainerProps = {
-  read: string
-  remove: string
+  $isRead: boolean
+  $remove: string
 }
 
 const alertContainerModifiers = {
@@ -111,7 +111,7 @@ const alertContainerModifiers = {
 }
 
 export const AlertContainer = styled.div<AlertContainerProps>`
-  ${({ theme, read, remove }) => css`
+  ${({ theme, $isRead, $remove }) => css`
     height: 100px;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
         height: auto;
 
         &::before {
-          content: '${remove}';
+          content: '${$remove}';
         }
 
         &:hover {
@@ -140,7 +140,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
       }
     }
 
-    ${read == 'false' && alertContainerModifiers.notRead(theme)}
+    ${!$isRead && alertContainerModifiers.notRead(theme)}
   `}
 `
 
@@ -176,11 +176,11 @@ export const AlertDescription = styled.div`
 `
 
 type AlertTimeProps = {
-  time: string
+  $time: string
 }
 
 export const AlertTime = styled.div<AlertTimeProps>`
-  ${({ theme, time }) => css`
+  ${({ theme, $time }) => css`
     font-weight: ${theme.font.light};
     color: ${theme.colors.font};
     margin-left: auto;
@@ -192,7 +192,7 @@ export const AlertTime = styled.div<AlertTimeProps>`
     align-items: center;
 
     &::before {
-      content: '${time}';
+      content: '${$time}';
     }
   `}
 `

@@ -8,10 +8,19 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `
 
+export const Header = styled.div`
+  /* this is required for "sticky" to work  */
+  top: 0;
+  position: sticky;
+  width: 100%;
+`
+
 export const Content = styled.div`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.large};
-    flex: 1 0 auto;
+    /* margin-top: ${theme.spacings.large}; */
+    /* margin-top: 1px; */
+    /* flex: 1 0 auto; */
+    flex-grow: 1;
   `}
 `
 

@@ -16,8 +16,8 @@ const Tooltip = ({
   return (
     <S.TooltipWrapper>
       <S.TooltipChildren>{children}</S.TooltipChildren>
-      <S.CenterContainer id="teste" position={position} limit={limit}>
-        <S.TooltipBox position={position}>
+      <S.CenterContainer $position={position} $limit={limit}>
+        <S.TooltipBox $position={position}>
           <S.TooltipText>{content}</S.TooltipText>
         </S.TooltipBox>
       </S.CenterContainer>

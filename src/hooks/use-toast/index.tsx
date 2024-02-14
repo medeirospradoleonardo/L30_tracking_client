@@ -1,13 +1,27 @@
-import Toast from 'components/Toast'
+import { ToastProps, ToastTypes } from 'components/Toast'
+import ToastContainer from 'components/ToastContainer'
 import { createContext, useContext, useMemo, useState } from 'react'
-import { createPortal } from 'react-dom'
+
+import { PositionOptions } from 'components/ToastContainer'
 
 export type ToastData = {
-  open: (title: string) => void
+  open: (title: string, options?: OpenProps) => string
+  close: (id: string) => void
+  closeAll: () => void
+  pause: (id: string) => void
+  play: (id: string) => void
+  openPromise: (title: string, position?: PositionOptions) => string
+  closePromise: (id: string, title: string, options?: OpenProps) => void
 }
 
 export const ToastDefaultValues = {
-  open: () => null
+  open: () => '',
+  close: () => null,
+  closeAll: () => null,
+  pause: () => null,
+  play: () => null,
+  openPromise: () => '',
+  closePromise: () => null
 }
 
 export const ToastContext = createContext<ToastData>(ToastDefaultValues)
@@ -16,9 +30,27 @@ export type ToastProviderProps = {
   children: React.ReactNode
 }
 
-type Toast = {
-  id: string
-  title: string
+type OpenProps = {
+  autoClose?: number | false
+  closeOnClick?: boolean
+  pauseOnHover?: boolean
+  hideProgressBar?: boolean
+  position?: PositionOptions
+  type?: ToastTypes
+  colored?: boolean
+  isPaused?: boolean
+}
+
+const defaultOpenValues = {
+  autoClose: 5,
+  closeOnClick: true,
+  pauseOnHover: true,
+  hideProgressBar: false,
+  position: 'bottom-right' as PositionOptions,
+  type: 'default' as ToastTypes,
+  colored: false,
+  isPaused: false,
+  isPromise: false
 }
 
 // Create a random ID
@@ -32,25 +64,107 @@ function generateUEID() {
 }
 
 const ToastProvider = ({ children }: ToastProviderProps) => {
-  const [toasts, setToasts] = useState([] as Toast[])
-  const open = (title: string) =>
+  const [toasts, setToasts] = useState([] as ToastProps[])
+
+  const open = (title: string, options?: OpenProps) => {
+    const id = generateUEID()
     setToasts((currentToasts) => [
       ...currentToasts,
-      { id: generateUEID(), title }
+      {
+        id: id,
+        title,
+        ...defaultOpenValues,
+        ...options
+      }
     ])
-  const close = (id: string) =>
+
+    return id
+  }
+
+  const openPromise = (
+    title: string,
+    position: PositionOptions = 'top-right'
+  ) => {
+    const id = generateUEID()
+    setToasts((currentToasts) => [
+      ...currentToasts,
+      {
+        id: id,
+        title,
+        ...defaultOpenValues,
+        isPromise: true,
+        position
+      }
+    ])
+
+    return id
+  }
+
+  const closePromise = (id: string, title: string, options?: OpenProps) => {
+    setToasts((currentToasts) =>
+      currentToasts.map((toast) => {
+        if (toast.id == id) {
+          toast = {
+            ...defaultOpenValues,
+            ...options,
+            id: toast.id,
+            position: toast.position,
+            title
+          }
+        }
+
+        return toast
+      })
+    )
+  }
+
+  const close = (id: string) => {
     setToasts((currentToasts) =>
       currentToasts.filter((toast) => toast.id !== id)
     )
-  const contextValue = useMemo(() => ({ open }), [])
+  }
+
+  const closeAll = () => {
+    setToasts([])
+  }
+
+  const pause = (id: string) => {
+    setToasts((currentToasts) =>
+      currentToasts.map((toast) => {
+        if (toast.id == id) {
+          toast.isPaused = true
+        }
+
+        return toast
+      })
+    )
+  }
+
+  const play = (id: string) => {
+    setToasts((currentToasts) =>
+      currentToasts.map((toast) => {
+        if (toast.id == id) {
+          toast.isPaused = false
+        }
+
+        return toast
+      })
+    )
+  }
+
+  const contextValue = useMemo(
+    () => ({ open, close, closeAll, pause, play, openPromise, closePromise }),
+    []
+  )
 
   return (
     <ToastContext.Provider value={contextValue}>
-      {children}
+      {/* {children}
       {createPortal(
         <div
           style={{
-            position: 'absolute'
+            position: 'absolute',
+            zIndex: 10000
           }}
         >
           {toasts.map((toast) => (
@@ -58,30 +172,17 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
               title={toast.title}
               key={toast.id}
               close={() => close(toast.id)}
+              hideProgressBar={toast.hideProgressBar}
+              autoClose={100000}
             />
           ))}
         </div>,
-        document.body
-      )}
+        document.body.firstElementChild
+        // document.body
+      )} */}
 
-      {/* <div
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          zIndex: '1000'
-        }}
-        className="toasts-wrapper"
-      >
-        {children}
-        {toasts.map((toast) => (
-          <Toast
-            title={toast.title}
-            key={toast.id}
-            close={() => close(toast.id)}
-          />
-        ))}
-      </div> */}
+      <ToastContainer toasts={toasts} />
+      {children}
     </ToastContext.Provider>
   )
 }

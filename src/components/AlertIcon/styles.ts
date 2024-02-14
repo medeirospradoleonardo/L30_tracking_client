@@ -17,11 +17,11 @@ const BadgeModifiers = {
 }
 
 type BadgeProps = {
-  overflow: string
+  $overflow: boolean
 }
 
 export const Badge = styled.span<BadgeProps>`
-  ${({ theme, overflow }) => css`
+  ${({ theme, $overflow }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,6 +35,6 @@ export const Badge = styled.span<BadgeProps>`
     top: -0.4rem;
     right: -0.4rem;
 
-    ${overflow == 'true' && BadgeModifiers.overflow()}
+    ${$overflow && BadgeModifiers.overflow()}
   `}
 `

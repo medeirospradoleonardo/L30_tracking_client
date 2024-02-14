@@ -10,7 +10,7 @@ const Dropdown = ({ title, children }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <S.Wrapper open={isOpen}>
+    <S.Wrapper $isOpen={isOpen}>
       <S.Title
         onMouseOver={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
