@@ -7,7 +7,9 @@ const languagesEN_US = {
       tooltipLight: 'Light Mode',
       tooltipDark: 'Dark Mode',
       tooltipLanguageSwitch: 'Change language',
-      modalLanguage: 'Choose your language'
+      modalLanguage: 'Choose your language',
+      buttonSignIn: 'Sign In',
+      buttonSignOut: 'Sign Up'
     },
     AlertList: {
       messageEmpty: 'Without any notifications',

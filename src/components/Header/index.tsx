@@ -9,9 +9,11 @@ import Modal from 'components/Modal'
 import LanguageSwitch from 'components/LanguageSwitch'
 import AlertDropdown from 'components/AlertDropdown'
 import Button from 'components/Button'
+import UserDropdown from 'components/UserDropDown'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
+  const [isLogged, setIsLogged] = useState(true)
   const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
   const { language } = useLanguage()
 
@@ -26,8 +28,22 @@ const Header = () => {
       </Modal>
       <S.Left>Logo</S.Left>
       <S.Right>
-        {/* <Button size="small">Entrar</Button> */}
-        <AlertDropdown />
+        {isLogged ? (
+          <>
+            <UserDropdown username="Leonardo" />
+            <AlertDropdown />
+          </>
+        ) : (
+          <>
+            <Button minimal size="small" style={{ marginRight: '2px' }}>
+              {language.components.Header.buttonSignIn}
+            </Button>
+            <Button size="small" style={{ marginRight: '5px' }}>
+              {language.components.Header.buttonSignOut}
+            </Button>
+          </>
+        )}
+
         <Tooltip
           content={language.components.Header.tooltipLanguageSwitch}
           position="bottom"

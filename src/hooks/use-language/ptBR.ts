@@ -7,7 +7,9 @@ const languagesPT_BR = {
       tooltipLight: 'Modo Claro',
       tooltipDark: 'Modo Escuro',
       tooltipLanguageSwitch: 'Mudar idioma',
-      modalLanguage: 'Escolha o seu idioma'
+      modalLanguage: 'Escolha o seu idioma',
+      buttonSignIn: 'Entrar',
+      buttonSignOut: 'Criar conta'
     },
     AlertList: {
       messageEmpty: 'Sem nenhuma notificação',

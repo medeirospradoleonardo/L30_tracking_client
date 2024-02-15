@@ -3,31 +3,13 @@ import * as S from './styles'
 import { Divider } from 'components/Divider'
 
 import { HiTruck } from 'react-icons/hi2'
+import { useAlert } from 'hooks/use-alert'
 
 const AlertList = () => {
   const { language } = useLanguage()
   const logged = true
 
-  const alerts = [
-    {
-      title: 'Doogee S110',
-      description: 'De VALINHOS-SP para BAURU-SP',
-      time: '22:47',
-      read: false
-    },
-    {
-      title: 'Mini Secador',
-      description: 'De CURITIBA-PR para BAURU-SP',
-      time: 'Ontem',
-      read: true
-    },
-    {
-      title: 'R36S',
-      description: 'Objeto saiu para entrega ao destinatário',
-      time: '02/02',
-      read: true
-    }
-  ]
+  const { alerts } = useAlert()
 
   return (
     <S.Container>
@@ -47,7 +29,7 @@ const AlertList = () => {
               {alerts.map((alert, index) => (
                 <div key={`${alert.title}-${index}`}>
                   <S.AlertContainer
-                    $isRead={alert.read}
+                    $isRead={alert.isRead}
                     $remove={language.components.AlertList.deleteButton}
                   >
                     <S.AlertIcon>

@@ -6,6 +6,8 @@ export type LanguageType = {
       tooltipDark: string
       tooltipLanguageSwitch: string
       modalLanguage: string
+      buttonSignIn: string
+      buttonSignOut: string
     }
     AlertList: {
       messageEmpty: string
@@ -13,6 +15,13 @@ export type LanguageType = {
       headerAllRead: string
       notLogged: string
       deleteButton: string
+    }
+    UserList: {
+      myProfile: string
+      myOrders: string
+      addOrder: string
+      config: string
+      signOut: string
     }
   }
 }

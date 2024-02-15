@@ -1,3 +1,8 @@
+import {
+  Icon as UserIcon,
+  Wrapper as UserIconWrapper
+} from 'components/UserIcon/styles'
+import { Icon as AlertDropdownIcon } from 'components/AlertDropdown/styles'
 import styled, { css } from 'styled-components'
 
 export const Title = styled.div`
@@ -55,11 +60,18 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, $isOpen }) => css`
     position: relative;
     width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     &:hover {
-      ${Title} {
+      ${AlertDropdownIcon}, ${UserIconWrapper} {
         color: ${theme.colors.primary};
         background: ${theme.colors.hover};
         transition: none;
+      }
+
+      ${UserIcon} {
+        transform: rotate(180deg);
       }
     }
 

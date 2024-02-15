@@ -1,10 +1,12 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { darken } from 'polished'
-import { ButtonProps } from '.'
+import { darken, rgba } from 'polished'
 
 export type WrapperProps = {
-  hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal'>
+  $hasIcon: boolean
+  $size?: 'small' | 'medium' | 'large'
+  $fullWidth?: boolean
+  $minimal?: boolean
+}
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -36,9 +38,13 @@ const wrapperModifiers = {
   minimal: (theme: DefaultTheme) => css`
     background: none;
     color: ${theme.colors.primary};
+    border-style: dashed;
 
     &:hover {
-      color: ${darken(0.1, theme.colors.primary)};
+      background: ${rgba(theme.colors.primary, 0.2)};
+      /* background: ${theme.colors.hover}; */
+      border-radius: ${theme.border.radius};
+      color: ${darken(0.05, theme.colors.primary)};
     }
   `,
   disabled: () => css`
@@ -50,7 +56,7 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, minimal, disabled }) => css`
+  ${({ theme, $size, $fullWidth, $hasIcon, $minimal, disabled }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -67,20 +73,20 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
 
     &:focus {
-      outline: 1px dashed;
+      /* outline: 1px dashed; */
     }
 
     &:hover {
-      background: ${minimal
+      background: ${$minimal
         ? 'none'
-        : `linear-gradient(180deg, #e35565 0%, #d958a6 50%)`};
-      transform: scale(1.1);
+        : `linear-gradient(180deg, #ea7643 0%, #da5922 50%)`};
+      /* transform: scale(1.1); */
     }
 
-    ${!!size && wrapperModifiers[size](theme)};
-    ${!!fullWidth && wrapperModifiers.fullWidth()};
-    ${!!hasIcon && wrapperModifiers.withIcon(theme)};
-    ${!!minimal && wrapperModifiers.minimal(theme)};
+    ${!!$size && wrapperModifiers[$size](theme)};
+    ${!!$fullWidth && wrapperModifiers.fullWidth()};
+    ${!!$hasIcon && wrapperModifiers.withIcon(theme)};
+    ${!!$minimal && wrapperModifiers.minimal(theme)};
     ${disabled && wrapperModifiers.disabled()};
   `}
 `
