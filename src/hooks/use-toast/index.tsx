@@ -181,8 +181,8 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
         // document.body
       )} */}
 
-      <ToastContainer toasts={toasts} />
       {children}
+      <ToastContainer toasts={toasts} />
     </ToastContext.Provider>
   )
 }

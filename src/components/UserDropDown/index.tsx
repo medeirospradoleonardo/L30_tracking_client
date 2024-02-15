@@ -3,13 +3,14 @@ import UserIcon from 'components/UserIcon'
 import UserList from 'components/UserList'
 
 export type UserDropdownProps = {
-  username: string
+  firstName: string
+  lastName: string
 }
 
-const UserDropdown = ({ username }: UserDropdownProps) => {
+const UserDropdown = ({ firstName, lastName }: UserDropdownProps) => {
   return (
-    <Dropdown title={<UserIcon username={username} />}>
-      <UserList />
+    <Dropdown title={<UserIcon firstName={firstName} />}>
+      <UserList firstName={firstName} lastName={lastName} />
     </Dropdown>
   )
 }

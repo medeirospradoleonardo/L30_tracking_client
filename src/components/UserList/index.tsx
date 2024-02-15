@@ -3,35 +3,55 @@ import * as S from './styles'
 
 import {
   HiOutlineArrowRightOnRectangle,
-  HiOutlineHeart,
-  HiOutlineUserCircle
+  HiOutlineUserCircle,
+  HiOutlineChevronRight,
+  HiOutlineWrench,
+  HiOutlinePlus,
+  HiOutlineInboxStack
 } from 'react-icons/hi2'
-import Link from 'next/link'
 
-const UserList = () => {
+type UserList = {
+  firstName: string
+  lastName: string
+}
+
+const UserList = ({ firstName, lastName }: UserList) => {
   const { language } = useLanguage()
   const logged = true
 
   return (
-    <S.Nav>
-      <Link href="/profile/me" passHref style={{ textDecoration: 'none' }}>
+    <S.Container>
+      <S.Content>
+        <S.Header>
+          {/* <HiOutlineUserCircle size={24} /> */}
+          <S.HeaderTitle>{`${firstName} ${lastName}`}</S.HeaderTitle>
+          <S.HeaderDescription>
+            <span>{language.components.UserList.myProfile}</span>
+            <HiOutlineChevronRight />
+          </S.HeaderDescription>
+        </S.Header>
+        <S.Divider />
         <S.Link>
-          <HiOutlineUserCircle />
-          <span>My profile</span>
+          <HiOutlineInboxStack size={24} />
+          <span>{language.components.UserList.myOrders}</span>
         </S.Link>
-      </Link>
-
-      <Link href="/wishlist" passHref style={{ textDecoration: 'none' }}>
+        {/* <S.Divider /> */}
         <S.Link>
-          <HiOutlineHeart />
-          <span>Wishlist</span>
+          <HiOutlinePlus size={24} />
+          <span>{language.components.UserList.addOrder}</span>
         </S.Link>
-      </Link>
-      <S.Link role="button" title="Sign out">
-        <HiOutlineArrowRightOnRectangle />
-        <span>Sign out</span>
-      </S.Link>
-    </S.Nav>
+        <S.Divider />
+        <S.Link>
+          <HiOutlineWrench size={24} />
+          <span>{language.components.UserList.config}</span>
+        </S.Link>
+        <S.Divider />
+        <S.Link role="button">
+          <HiOutlineArrowRightOnRectangle size={24} />
+          <span>{language.components.UserList.signOut}</span>
+        </S.Link>
+      </S.Content>
+    </S.Container>
   )
 }
 

@@ -21,7 +21,7 @@ export const LanguageContainer = styled.div`
 
   &:hover {
     ${({ theme }) => css`
-      background-color: ${rgba(theme.colors.primary, 0.2)};
+      background: ${rgba(theme.colors.primary, 0.2)};
       border-radius: ${theme.border.radius};
     `}
   }

@@ -8,19 +8,21 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `
 
-export const Header = styled.div`
+export const Header = styled.header`
   /* this is required for "sticky" to work  */
-  top: 0;
-  position: sticky;
+  /* top: 0; */
+  z-index: 2;
+  position: fixed;
   width: 100%;
 `
 
-export const Content = styled.div`
+export const Content = styled.main`
   ${({ theme }) => css`
     /* margin-top: ${theme.spacings.large}; */
+    margin-top: 45px;
     /* margin-top: 1px; */
     /* flex: 1 0 auto; */
-    flex-grow: 1;
+    /* flex-grow: 1; */
   `}
 `
 
@@ -29,7 +31,7 @@ export const SectionFooter = styled.section`
     margin-top: ${theme.spacings.large};
     padding-bottom: ${theme.spacings.xsmall};
     padding-top: ${theme.spacings.xxlarge};
-    background-color: ${theme.colors.white};
+    background: ${theme.colors.white};
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
     ${media.greaterThan('medium')`
       padding-top: calc(${theme.spacings.xxlarge} * 2);

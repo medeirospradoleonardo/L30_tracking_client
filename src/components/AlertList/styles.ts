@@ -106,7 +106,7 @@ type AlertContainerProps = {
 
 const alertContainerModifiers = {
   notRead: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.lightGray};
+    background: ${theme.colors.lightGray};
   `
 }
 
@@ -163,7 +163,7 @@ export const AlertTitle = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.font};
-    font-size: ${theme.font.sizes.large};
+    font-size: ${theme.font.sizes.medium};
   `}
 `
 

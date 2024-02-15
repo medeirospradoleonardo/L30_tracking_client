@@ -30,7 +30,7 @@ const Header = () => {
       <S.Right>
         {isLogged ? (
           <>
-            <UserDropdown username="Leonardo" />
+            <UserDropdown firstName="Leonardo" lastName="Medeiros Prado" />
             <AlertDropdown />
           </>
         ) : (

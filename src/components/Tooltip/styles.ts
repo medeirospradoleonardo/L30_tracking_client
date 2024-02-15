@@ -30,7 +30,7 @@ export const TooltipBox = styled.span<TooltipBoxProps>`
   position: relative;
 
   ${({ theme }) => css`
-    background-color: ${theme.colors.tooltip};
+    background: ${theme.colors.tooltip};
     border-radius: ${theme.border.radius};
   `}
   color: #fff;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 45px;
   ${({ theme }) => css`
-    background-color: ${theme.colors.background};
+    background: ${theme.colors.background};
   `}
   display: flex;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
@@ -38,7 +38,7 @@ export const Icon = styled.div`
     color: ${theme.colors.font};
     &:hover {
       color: ${theme.colors.primary};
-      background-color: ${theme.colors.hover};
+      background: ${theme.colors.hover};
       transition: none;
     }
   `}

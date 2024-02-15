@@ -66,7 +66,7 @@ export const Wrapper = styled.div<WrapperProps>`
 export const ModalHeader = styled.div`
   width: 100%;
   ${({ theme }) => css`
-    background-color: ${theme.colors.background};
+    background: ${theme.colors.background};
     border-radius: ${theme.border.radius};
   `}
   display: flex;

@@ -17,6 +17,13 @@ const languagesPT_BR = {
       headerAllRead: 'Marcar tudo como lido',
       notLogged: 'Você precisa estar logado para ver as notificações',
       deleteButton: 'Excluir'
+    },
+    UserList: {
+      myProfile: 'Meu perfil',
+      myOrders: 'Minhas encomendas',
+      addOrder: 'Adicionar encomenda',
+      config: 'Configurações',
+      signOut: 'Sair'
     }
   }
 } as LanguageType
