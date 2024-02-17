@@ -33,6 +33,15 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       src: local('IBMPlexSans SemiBold'), local('IBMPlexSans-SemiBold'),
           url('/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
     }
+
+    @font-face {
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: local('IBMPlexSans Bold'), local('IBMPlexSans-Bold'),
+          url('/fonts/IBMPlexSans-Bold.woff2') format('woff2');
+    }
   
     * {
       margin: 0;

@@ -10,6 +10,7 @@ import LanguageSwitch from 'components/LanguageSwitch'
 import AlertDropdown from 'components/AlertDropdown'
 import Button from 'components/Button'
 import UserDropdown from 'components/UserDropDown'
+import Logo from 'components/Logo'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
@@ -26,7 +27,9 @@ const Header = () => {
       >
         <LanguageSwitch closeModal={() => setIsOpenModalLanguage(false)} />
       </Modal>
-      <S.Left>Logo</S.Left>
+      <S.Left>
+        <Logo />
+      </S.Left>
       <S.Right>
         {isLogged ? (
           <>

@@ -50,7 +50,7 @@ export const Header = styled.div`
 
 export const HeaderTitle = styled.div`
   ${({ theme }) => css`
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.semiBold};
     font-size: ${theme.font.sizes.large};
   `}
 `
@@ -106,6 +106,9 @@ export const Link = styled.div`
       background: ${rgba(theme.colors.primary, 0.4)};
       border-radius: ${theme.border.radius};
       text-decoration: none;
+    }
+    > svg {
+      color: ${theme.colors.primary};
     }
 
     > span {

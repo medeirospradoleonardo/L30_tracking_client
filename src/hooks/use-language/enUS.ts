@@ -24,6 +24,9 @@ const languagesEN_US = {
       addOrder: 'Add order',
       config: 'Settings',
       signOut: 'Exit'
+    },
+    Logo: {
+      title: 'Tracking'
     }
   }
 } as LanguageType

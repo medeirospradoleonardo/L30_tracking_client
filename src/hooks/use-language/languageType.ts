@@ -23,5 +23,8 @@ export type LanguageType = {
       config: string
       signOut: string
     }
+    Logo: {
+      title: string
+    }
   }
 }

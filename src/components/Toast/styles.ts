@@ -214,7 +214,7 @@ export const Title = styled.span<TitleProps>`
   ${({ theme, $colored, $isPromise }) => css`
     color: ${$colored ? theme.colors.white : theme.colors.font};
     font-size: ${theme.font.sizes.medium};
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.semiBold};
 
     ${$isPromise && titleModifiers.promise(theme)}
   `}

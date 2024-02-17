@@ -7,7 +7,8 @@ const theme = {
       'IBM Plex Sans, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif',
     light: 300,
     normal: 400,
-    bold: 600,
+    semiBold: 600,
+    bold: 800,
     sizes: {
       xsmall: '1.2rem',
       small: '1.4rem',
@@ -15,6 +16,7 @@ const theme = {
       large: '1.8rem',
       xlarge: '2.0rem',
       xxlarge: '2.8rem',
+      xxxlarge: '3.6rem',
       huge: '5.2rem'
     }
   },
@@ -56,6 +58,7 @@ export const lightTheme = Object.assign(
       lightGray: '#F1F1F1',
       gray: '#E3E2E2',
       darkGray: '#ADADAD',
+      darknessGray: '#7B7B7B',
       warning: '#F1C40F',
       error: '#E74C3C',
       success: '#07BC0C',

@@ -24,6 +24,9 @@ const languagesPT_BR = {
       addOrder: 'Adicionar encomenda',
       config: 'Configurações',
       signOut: 'Sair'
+    },
+    Logo: {
+      title: 'Rastreamento'
     }
   }
 } as LanguageType

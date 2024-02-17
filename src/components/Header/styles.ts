@@ -3,11 +3,12 @@ import { css, styled } from 'styled-components'
 export const Container = styled.div`
   width: 100%;
   height: 45px;
+  /* height: 70px; */
   ${({ theme }) => css`
     background: ${theme.colors.background};
   `}
   display: flex;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.6);
 `
 
 export const Left = styled.div`

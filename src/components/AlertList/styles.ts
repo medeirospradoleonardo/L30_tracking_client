@@ -161,7 +161,7 @@ export const AlertIcon = styled.div`
 
 export const AlertTitle = styled.div`
   ${({ theme }) => css`
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.semiBold};
     color: ${theme.colors.font};
     font-size: ${theme.font.sizes.medium};
   `}
