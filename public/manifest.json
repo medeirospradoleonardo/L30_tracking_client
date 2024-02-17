@@ -3,12 +3,12 @@
   "short_name": "L30",
   "icons": [
     {
-      "src": "/img/icon-192.png",
+      "src": "/img/icon-192-preto.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/icon-512.png",
+      "src": "/img/icon-512-preto.png",
       "type": "image/png",
       "sizes": "512x512"
     }

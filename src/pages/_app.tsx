@@ -21,8 +21,8 @@ function App({ Component, pageProps }: AppProps) {
                   ? `(${quantity}) L30 ${language.components.Logo.title}`
                   : `L30 ${language.components.Logo.title}`}
               </title>
-              <link rel="shortcut icon" href="/img/icon-512.png" />
-              <link rel="apple-touch-icon" href="/img/icon-512.png" />
+              <link rel="shortcut icon" href="/img/icon-512-preto.png" />
+              <link rel="apple-touch-icon" href="/img/icon-512-preto.png" />
               <link rel="manifest" href="/manifest.json" />
               <link rel="icon" href="/favicon.ico" sizes="any" />
               <meta name="theme-color" content="#06092B" />
