@@ -42,6 +42,7 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ $size, $hideOnMobile }) => css`
     display: flex;
     margin-left: 10px;
+    user-select: none;
 
     ${!!$size && wrapperModifiers[$size]};
     ${!!$hideOnMobile && wrapperModifiers.hideOnMobile};

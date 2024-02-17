@@ -21,9 +21,11 @@ const Logo = ({ size = 'normal', hideOnMobile = false }: LogoProps) => {
         </S.Horizontal>
       </S.Icon>
       <S.Number>30</S.Number>
-      <S.Title $isDarkMode={isDarkMode}>
-        {language.components.Logo.title}
-      </S.Title>
+      {!hideOnMobile && (
+        <S.Title $isDarkMode={isDarkMode}>
+          {language.components.Logo.title}
+        </S.Title>
+      )}
     </S.Wrapper>
   )
 }
