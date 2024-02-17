@@ -76,7 +76,7 @@ export const Triangule = styled.div`
     border-width: 0 9px 9px 0;
     border-color: transparent ${rgba(
       theme.colors.primary,
-      0.6
+      0.8
     )}; transparent transparent;
     transform: rotate(0deg);
   `}

@@ -91,6 +91,7 @@ export const darkTheme = Object.assign(
       lightGray: '#6E6D6D',
       gray: '#595959',
       darkGray: '#ADADAD',
+      darknessGray: '#7B7B7B',
       warning: '#F1C40F',
       error: '#E74C3C',
       success: '#07BC0C',
