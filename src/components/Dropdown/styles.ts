@@ -27,6 +27,7 @@ export const Content = styled.div`
     cursor: pointer;
     border-radius: ${theme.border.radius};
     background: ${theme.colors.bg};
+    z-index: 1000;
   `}
 `
 

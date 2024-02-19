@@ -11,7 +11,9 @@ export const Wrapper = styled.div`
 export const Header = styled.header`
   /* this is required for "sticky" to work  */
   /* top: 0; */
-  z-index: 2;
+  ${({ theme }) => css`
+    z-index: ${theme.layers.menu};
+  `}
   position: fixed;
   width: 100%;
 `

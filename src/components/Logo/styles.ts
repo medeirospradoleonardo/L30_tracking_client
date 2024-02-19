@@ -4,10 +4,10 @@ import media from 'styled-media-query'
 import { rgba } from 'polished'
 
 const wrapperModifiers = {
-  normal: () => css`
+  normal: (isBR: boolean) => css`
     /* width: 15rem;
     height: 4.5rem; */
-    width: 100%;
+    width: ${isBR ? '14.14rem' : '9.14rem'};
     height: 100%;
   `,
 
@@ -18,7 +18,7 @@ const wrapperModifiers = {
 
   hideOnMobile: () => css`
     ${media.lessThan('medium')`
-        width: 5.8rem;
+        width: 2.6rem;
         height: 4.5rem;
 
         svg {
@@ -26,7 +26,7 @@ const wrapperModifiers = {
             pointer-events: none;
         }
 
-        .text {
+        ${Title} {
             display: none;
         }
     `}
@@ -36,15 +36,17 @@ const wrapperModifiers = {
 type WrapperProps = {
   $size?: 'normal' | 'large'
   $hideOnMobile?: boolean
+  $isBR: boolean
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ $size, $hideOnMobile }) => css`
+  ${({ $size, $hideOnMobile, $isBR }) => css`
     display: flex;
     margin-left: 10px;
+    margin-right: 40px;
     user-select: none;
 
-    ${!!$size && wrapperModifiers[$size]};
+    ${!!$size && wrapperModifiers[$size]($isBR)};
     ${!!$hideOnMobile && wrapperModifiers.hideOnMobile};
   `}
 `

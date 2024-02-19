@@ -11,11 +11,13 @@ type ThemeNames = 'Light' | 'Dark' | null
 export type ThemeSwitchData = {
   saveTheme: (themeName: ThemeNames, withtransition?: boolean) => void
   isDarkMode: boolean
+  changeIsOverlay: (isOverlay: boolean) => void
 }
 
 export const ThemeSwitchDefaultValues = {
   saveTheme: () => null,
-  isDarkMode: false
+  isDarkMode: false,
+  changeIsOverlay: () => null
 }
 
 export const ThemeSwitchContext = createContext<ThemeSwitchData>(
@@ -28,6 +30,7 @@ export type ThemeSwitchProviderProps = {
 
 const ThemeSwitchProvider = ({ children }: ThemeSwitchProviderProps) => {
   const [isTransition, setIsTransition] = useState(false)
+  const [isOverlay, setIsOverlay] = useState(false)
   const [theme, setTheme] = useState<ThemeNames>(null)
 
   useEffect(() => {
@@ -56,6 +59,10 @@ const ThemeSwitchProvider = ({ children }: ThemeSwitchProviderProps) => {
     setStorageItem(THEME_KEY, [newTheme])
   }
 
+  const changeIsOverlay = (isOverlay: boolean) => {
+    setIsOverlay(isOverlay)
+  }
+
   if (!theme) {
     return null
   }
@@ -64,12 +71,13 @@ const ThemeSwitchProvider = ({ children }: ThemeSwitchProviderProps) => {
     <ThemeSwitchContext.Provider
       value={{
         saveTheme,
-        isDarkMode: theme == 'Dark'
+        isDarkMode: theme == 'Dark',
+        changeIsOverlay
       }}
     >
       <StyleSheetManager shouldForwardProp={() => true}>
         <ThemeProvider theme={theme == 'Dark' ? darkTheme : lightTheme}>
-          <GlobalStyles isTransition={isTransition} />
+          <GlobalStyles $isTransition={isTransition} $isOverlay={isOverlay} />
           {children}
         </ThemeProvider>
       </StyleSheetManager>

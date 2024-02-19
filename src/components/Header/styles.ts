@@ -1,4 +1,5 @@
 import { css, styled } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   width: 100%;
@@ -9,6 +10,14 @@ export const Container = styled.div`
   `}
   display: flex;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.6);
+`
+
+export const LogoWrapper = styled.div`
+  ${media.lessThan('medium')`
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  `}
 `
 
 export const Left = styled.div`
@@ -26,6 +35,31 @@ export const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const LabelContainer = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  ${({ theme }) => css`
+    color: ${theme.colors.font};
+    font-weight: ${theme.font.normal};
+    font-size: ${theme.font.sizes.small};
+    padding: 10px;
+
+    &:hover {
+      color: ${theme.colors.primary};
+      background: ${theme.colors.hover};
+      transition: none;
+    }
+  `}
+`
+export const Label = styled.div`
+  white-space: nowrap;
 `
 
 export const Icon = styled.div`

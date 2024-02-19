@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const ContainerTopLeft = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   top: 64px;
   left: 0px;
@@ -12,6 +16,10 @@ export const ContainerTopLeft = styled.div`
   overflow: hidden;
 `
 export const ContainerTopRight = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   top: 64px;
   right: 0px;
@@ -23,6 +31,10 @@ export const ContainerTopRight = styled.div`
   overflow: hidden;
 `
 export const ContainerTopCenter = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   top: 0px;
   left: 50%;
@@ -37,6 +49,10 @@ export const ContainerTopCenter = styled.div`
   overflow: hidden;
 `
 export const ContainerBottomLeft = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   bottom: 16px;
   left: 0px;
@@ -48,6 +64,10 @@ export const ContainerBottomLeft = styled.div`
   overflow: hidden;
 `
 export const ContainerBottomRight = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   bottom: 16px;
   right: 0px;
@@ -59,6 +79,10 @@ export const ContainerBottomRight = styled.div`
   overflow: hidden;
 `
 export const ContainerBottomCenter = styled.div`
+  ${({ theme }) => css`
+    z-index: ${theme.layers.toast};
+  `}
+
   position: fixed;
   bottom: 16px;
   left: 50%;

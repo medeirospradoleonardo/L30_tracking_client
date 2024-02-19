@@ -31,7 +31,8 @@ const theme = {
   },
   layers: {
     base: 10,
-    menu: 20,
+    menu: 15,
+    toast: 20,
     overlay: 30,
     modal: 40,
     alwaysOnTop: 50

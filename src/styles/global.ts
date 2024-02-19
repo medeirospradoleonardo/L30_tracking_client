@@ -1,9 +1,11 @@
 import { createGlobalStyle, css, DefaultTheme } from 'styled-components'
+import { Wrapper as WrapperBase } from 'templates/Base/styles'
 
 type GlobalStylesProps = {
   theme?: DefaultTheme
-  removeBg?: boolean
-  isTransition?: boolean
+  $removeBg?: boolean
+  $isTransition?: boolean
+  $isOverlay?: boolean
 }
 
 const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
@@ -51,8 +53,8 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       -moz-osx-font-smoothing: grayscale;
 
 
-      ${({ isTransition }) => css`
-        ${isTransition &&
+      ${({ $isTransition }) => css`
+        ${$isTransition &&
         css`
           transition: background 0.2s ease-in;
         `}
@@ -64,16 +66,21 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       }
     }
   
-    ${({ theme, removeBg }) => css`
+    ${({ theme, $removeBg, $isOverlay }) => css`
       html {
         font-size: 62.5%;
+      }
+
+      ${WrapperBase} {
+        overflow: ${$isOverlay ? 'hidden' : 'visible'};
       }
 
       body {
         font-family: ${theme.font.family};
         font-size: ${theme.font.sizes.medium};
+        /* overflow: scroll; */
 
-        ${!removeBg &&
+        ${!$removeBg &&
         css`
           background: ${theme.colors.background};
         `}

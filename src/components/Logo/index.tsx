@@ -9,10 +9,14 @@ export type LogoProps = {
 
 const Logo = ({ size = 'normal', hideOnMobile = false }: LogoProps) => {
   const { isDarkMode } = useTheme()
-  const { language } = useLanguage()
+  const { language, getLanguageValue } = useLanguage()
 
   return (
-    <S.Wrapper $size={size} $hideOnMobile={hideOnMobile}>
+    <S.Wrapper
+      $size={size}
+      $hideOnMobile={hideOnMobile}
+      $isBR={getLanguageValue == 'pt-BR'}
+    >
       <S.Icon>
         <S.Vertical />
         <S.Horizontal>
@@ -21,11 +25,10 @@ const Logo = ({ size = 'normal', hideOnMobile = false }: LogoProps) => {
         </S.Horizontal>
       </S.Icon>
       <S.Number>30</S.Number>
-      {!hideOnMobile && (
-        <S.Title $isDarkMode={isDarkMode}>
-          {language.components.Logo.title}
-        </S.Title>
-      )}
+
+      <S.Title $isDarkMode={isDarkMode}>
+        {language.components.Logo.title}
+      </S.Title>
     </S.Wrapper>
   )
 }

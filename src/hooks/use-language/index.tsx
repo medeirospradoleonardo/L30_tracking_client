@@ -4,6 +4,7 @@ import { getStorageItem, setStorageItem } from 'utils/localStorage'
 import languagesPT_BR from './ptBR'
 import languagesEN_US from './enUS'
 import { LanguageType } from './languageType'
+import { refreshTitle } from 'hooks/use-alert'
 
 const LANGUAGE_KEY = 'language'
 
@@ -66,6 +67,7 @@ const LanguageSwitchProvider = ({ children }: LanguageSwitchProviderProps) => {
     const newLanguage = language == 'pt-BR' ? 'pt-BR' : 'en-US'
     setLanguage(newLanguage)
     setStorageItem(LANGUAGE_KEY, [newLanguage])
+    refreshTitle(language == 'pt-BR' ? languagesPT_BR : languagesEN_US)
   }
 
   return (

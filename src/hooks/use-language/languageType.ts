@@ -8,6 +8,8 @@ export type LanguageType = {
       modalLanguage: string
       buttonSignIn: string
       buttonSignOut: string
+      labelContact: string
+      labelTracking: string
     }
     AlertList: {
       messageEmpty: string

@@ -1,15 +1,18 @@
+import { useEffect } from 'react'
 import * as S from './styles'
 
 import { HiOutlineXMark } from 'react-icons/hi2'
+import { useTheme } from 'hooks/use-theme'
 
-type ModalProps = {
+export type ModalProps = {
   children: React.ReactNode
-  title: string
+  title?: string
   isOpen: boolean
   closeModal: () => void
 }
 
 const Modal = ({ children, title, isOpen, closeModal }: ModalProps) => {
+  const { changeIsOverlay } = useTheme()
   const closeModalRequest = () => {
     // document.removeEventListener('keydown', keyDownHandler)
   }
@@ -27,14 +30,20 @@ const Modal = ({ children, title, isOpen, closeModal }: ModalProps) => {
   //   document.removeEventListener('keydown', keyDownHandler)
   // }
 
+  useEffect(() => {
+    isOpen ? changeIsOverlay(true) : changeIsOverlay(false)
+  }, [isOpen])
+
   return (
     <S.Wrapper $isOpen={isOpen}>
       <S.Overlay aria-hidden={!isOpen} onClick={closeModal}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <S.ModalHeader>
-            <S.Left>
-              <h3>{title}</h3>
-            </S.Left>
+            {title && (
+              <S.Left>
+                <h3>{title}</h3>
+              </S.Left>
+            )}
             <S.Right>
               <S.Icon onClick={closeModal}>
                 <HiOutlineXMark size={25} />

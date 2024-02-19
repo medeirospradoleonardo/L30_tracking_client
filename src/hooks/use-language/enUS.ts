@@ -9,7 +9,9 @@ const languagesEN_US = {
       tooltipLanguageSwitch: 'Change language',
       modalLanguage: 'Choose your language',
       buttonSignIn: 'Sign In',
-      buttonSignOut: 'Sign Up'
+      buttonSignOut: 'Sign Up',
+      labelContact: 'Contact us',
+      labelTracking: 'Track an order'
     },
     AlertList: {
       messageEmpty: 'Without any notifications',

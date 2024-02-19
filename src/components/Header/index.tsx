@@ -2,7 +2,18 @@ import { useTheme } from 'hooks/use-theme'
 import { useLanguage } from 'hooks/use-language'
 import * as S from './styles'
 
-import { HiOutlineSun, HiOutlineMoon, HiOutlineGlobeAlt } from 'react-icons/hi2'
+import {
+  HiOutlineSun,
+  HiOutlineMoon,
+  HiOutlineGlobeAlt,
+  HiOutlineChatBubbleLeftEllipsis,
+  HiOutlinePhone,
+  HiOutlineMagnifyingGlass,
+  HiOutlineUserGroup,
+  HiOutlineUsers,
+  HiOutlineInformationCircle,
+  HiOutlineBars3CenterLeft
+} from 'react-icons/hi2'
 import Tooltip from 'components/Tooltip'
 import { useState } from 'react'
 import Modal from 'components/Modal'
@@ -11,29 +22,76 @@ import AlertDropdown from 'components/AlertDropdown'
 import Button from 'components/Button'
 import UserDropdown from 'components/UserDropDown'
 import Logo from 'components/Logo'
+import MediaMatch from 'components/MediaMatch'
+import { useModal } from 'hooks/use-modal'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
   const [isLogged, setIsLogged] = useState(true)
-  const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
+  // const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
   const { language } = useLanguage()
+  const { setModal, openModal, closeModal } = useModal()
 
   return (
     <S.Container>
-      <Modal
+      {/* <Modal
         isOpen={isOpenModalLanguage}
         title={language.components.Header.modalLanguage}
         closeModal={() => setIsOpenModalLanguage(false)}
       >
         <LanguageSwitch closeModal={() => setIsOpenModalLanguage(false)} />
-      </Modal>
-      <S.Left>
-        <Logo />
-      </S.Left>
+      </Modal> */}
+      <S.LogoWrapper>
+        <Logo hideOnMobile />
+      </S.LogoWrapper>
+      <MediaMatch $lessThan="medium">
+        <S.Icon>
+          <HiOutlineBars3CenterLeft size={25} />
+        </S.Icon>
+      </MediaMatch>
+      <MediaMatch $greaterThan="medium">
+        <S.Left>
+          {/* <S.LabelContainer>
+          <HiOutlineUsers
+            color="#F26122"
+            size={25}
+            style={{ marginRight: '10px' }}
+          />
+          <S.Label>Sobre Nós</S.Label>
+        </S.LabelContainer>
+
+        <S.LabelContainer>
+          <HiOutlineInformationCircle
+            color="#F26122"
+            size={25}
+            style={{ marginRight: '10px' }}
+          />
+          <S.Label>Dúvidas Frequentes</S.Label>
+        </S.LabelContainer> */}
+          <S.LabelContainer>
+            <HiOutlinePhone
+              color="#F26122"
+              size={25}
+              style={{ marginRight: '10px' }}
+            />
+            <S.Label>{language.components.Header.labelContact}</S.Label>
+          </S.LabelContainer>
+          <S.LabelContainer>
+            <HiOutlineMagnifyingGlass
+              color="#F26122"
+              size={25}
+              style={{ marginRight: '10px' }}
+            />
+            <S.Label>{language.components.Header.labelTracking}</S.Label>
+          </S.LabelContainer>
+        </S.Left>
+      </MediaMatch>
       <S.Right>
         {isLogged ? (
           <>
-            <UserDropdown firstName="Leonardo" lastName="Medeiros Prado" />
+            <MediaMatch $greaterThan="medium">
+              <UserDropdown firstName="Leonardo" lastName="Medeiros Prado" />
+            </MediaMatch>
             <AlertDropdown />
           </>
         ) : (
@@ -46,12 +104,19 @@ const Header = () => {
             </Button>
           </>
         )}
-
         <Tooltip
           content={language.components.Header.tooltipLanguageSwitch}
           position="bottom"
         >
-          <S.Icon onClick={() => setIsOpenModalLanguage(true)}>
+          <S.Icon
+            onClick={() =>
+              setModal({
+                isOpen: true,
+                title: language.components.Header.modalLanguage,
+                children: <LanguageSwitch closeModal={closeModal} />
+              })
+            }
+          >
             <HiOutlineGlobeAlt size={25} />
           </S.Icon>
         </Tooltip>

@@ -9,7 +9,9 @@ const languagesPT_BR = {
       tooltipLanguageSwitch: 'Mudar idioma',
       modalLanguage: 'Escolha o seu idioma',
       buttonSignIn: 'Entrar',
-      buttonSignOut: 'Criar conta'
+      buttonSignOut: 'Criar conta',
+      labelContact: 'Fale conosco',
+      labelTracking: 'Rastreie uma encomenda'
     },
     AlertList: {
       messageEmpty: 'Sem nenhuma notificação',
