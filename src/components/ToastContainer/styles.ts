@@ -31,9 +31,9 @@ export const ContainerTopRight = styled.div`
   overflow: hidden;
 `
 export const ContainerTopCenter = styled.div`
-  ${({ theme }) => css`
+  /* ${({ theme }) => css`
     z-index: ${theme.layers.toast};
-  `}
+  `} */
 
   position: fixed;
   top: 0px;

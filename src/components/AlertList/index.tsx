@@ -5,7 +5,11 @@ import { Divider } from 'components/Divider'
 import { HiTruck } from 'react-icons/hi2'
 import { useAlert } from 'hooks/use-alert'
 
-const AlertList = () => {
+type AlertListProps = {
+  closeModal?: () => void
+}
+
+const AlertList = ({ closeModal }: AlertListProps) => {
   const { language } = useLanguage()
   const logged = true
 
@@ -27,7 +31,7 @@ const AlertList = () => {
           alerts.length > 0 ? (
             <>
               {alerts.map((alert, index) => (
-                <div key={`${alert.title}-${index}`}>
+                <div key={`${alert.title}-${index}`} onClick={closeModal}>
                   <S.AlertContainer
                     $isRead={alert.isRead}
                     $remove={language.components.AlertList.deleteButton}

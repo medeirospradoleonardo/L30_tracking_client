@@ -10,10 +10,14 @@ const AlertDropdown = () => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   return (
     <>
-      <Modal isOpen={isOpenModal} closeModal={() => setIsOpenModal(false)}>
-        <AlertList />
-      </Modal>
       <MediaMatch $lessThan="medium">
+        <Modal
+          isOpen={isOpenModal}
+          closeModal={() => setIsOpenModal(false)}
+          full
+        >
+          <AlertList closeModal={() => setIsOpenModal(false)} />
+        </Modal>
         <S.Icon onClick={() => setIsOpenModal(true)}>
           <AlertIcon />
         </S.Icon>

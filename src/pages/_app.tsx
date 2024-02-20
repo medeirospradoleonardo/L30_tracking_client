@@ -33,10 +33,14 @@ function App({ Component, pageProps }: AppProps) {
                 <link rel="apple-touch-icon" href="/img/icon-512-preto.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="icon" href="/favicon.ico" sizes="any" />
-                <meta name="theme-color" content="#06092B" />
-                <meta
+                {/* <meta name="theme-color" content="#06092B" /> */}
+                {/* <meta
                   name="description"
                   content="The best Game Store in the world!"
+                /> */}
+                <meta
+                  name="viewport"
+                  content="width=device-width, user-scalable=no"
                 />
               </Head>
               <Component {...pageProps} />

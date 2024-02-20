@@ -1,5 +1,6 @@
 import { rgba } from 'polished'
 import { DefaultTheme, css, styled } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   display: flex;
@@ -9,6 +10,10 @@ export const Container = styled.div`
   margin-bottom: 10px;
   justify-content: center;
   align-items: center;
+
+  ${media.lessThan('medium')`
+    width: 95vw;
+  `}
 `
 
 export const LanguageContainer = styled.div`

@@ -50,6 +50,41 @@ export const getAlerts = () => {
       time: '02/02',
       isRead: true,
       isView: true
+    },
+    {
+      title: 'R36S',
+      description: 'Objeto saiu para entrega ao destinatário',
+      time: '02/02',
+      isRead: true,
+      isView: true
+    },
+    {
+      title: 'R36S',
+      description: 'Objeto saiu para entrega ao destinatário',
+      time: '02/02',
+      isRead: true,
+      isView: true
+    },
+    {
+      title: 'R36S',
+      description: 'Objeto saiu para entrega ao destinatário',
+      time: '02/02',
+      isRead: true,
+      isView: true
+    },
+    {
+      title: 'R36S',
+      description: 'Objeto saiu para entrega ao destinatário',
+      time: '02/02',
+      isRead: true,
+      isView: true
+    },
+    {
+      title: 'teste',
+      description: 'teste',
+      time: '02/02',
+      isRead: true,
+      isView: true
     }
   ]
 }
@@ -71,7 +106,7 @@ const AlertProvider = ({ children }: AlertProviderProps) => {
   useEffect(() => {
     setAlerts(getAlerts())
     refreshTitle(language)
-  }, [])
+  }, [language])
 
   const contextValue = useMemo(
     () => ({

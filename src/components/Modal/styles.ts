@@ -1,21 +1,46 @@
 import { css, styled } from 'styled-components'
 
-export const Modal = styled.div`
-  ${({ theme }) => css`
-    background: ${theme.colors.background};
-    color: ${theme.colors.font};
+const modalModifiers = {
+  full: () => css`
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  `
+}
 
-    top: 50%;
-    left: 50%;
+type ModalProps = {
+  $full: boolean
+}
+
+export const Modal = styled.div<ModalProps>`
+  ${({ theme, $full }) => css`
+    background: ${theme.colors.bg};
+    color: ${theme.colors.font};
 
     border-radius: ${theme.border.radius};
 
     z-index: ${theme.layers.modal};
+
+    ${$full && modalModifiers.full()}
   `}
 `
 
-export const Overlay = styled.div`
-  ${({ theme }) => css`
+const overlayModifiers = {
+  mobile: () => css`
+    align-items: start;
+
+    ${Modal} {
+      margin-top: 5rem;
+    }
+  `
+}
+
+type OverlayProps = {
+  $onTop: boolean
+}
+
+export const Overlay = styled.div<OverlayProps>`
+  ${({ theme, $onTop }) => css`
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     pointer-events: none;
@@ -28,6 +53,8 @@ export const Overlay = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    ${$onTop && overlayModifiers.mobile()}
   `}
 `
 
@@ -68,7 +95,7 @@ export const Wrapper = styled.div<WrapperProps>`
 export const ModalHeader = styled.div`
   width: 100%;
   ${({ theme }) => css`
-    background: ${theme.colors.background};
+    background: ${theme.colors.bg};
     border-radius: ${theme.border.radius};
   `}
   display: flex;

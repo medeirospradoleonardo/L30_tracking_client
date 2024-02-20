@@ -1,6 +1,7 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 
 import { darken } from 'polished'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   display: flex;
@@ -11,35 +12,44 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
-
   ${({ theme }) => css`
     background: ${theme.colors.bg};
     border-radius: ${theme.border.radius};
 
-    &::before {
-      content: '';
-      position: absolute;
-      border-right: 1.2rem solid transparent;
-      border-left: 1.2rem solid transparent;
-      border-bottom: 1.2rem solid ${theme.colors.bg};
-      top: -1rem;
-      right: 1rem;
-    }
+    ${media.greaterThan('medium')`
+      box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
+      &::before {
+        content: '';
+        position: absolute;
+        border-right: 1.2rem solid transparent;
+        border-left: 1.2rem solid transparent;
+        border-bottom: 1.2rem solid ${theme.colors.bg};
+        top: -1rem;
+        right: 1rem;
+      }
+    `}
+
+    ${media.lessThan('medium')`
+      width: 100vw;
+      height: calc(100vh - 45px);
+    `}
   `}
 `
 
 export const Header = styled.div`
   width: 100%;
-  height: 40px;
+  height: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  ${({ theme }) => css`
+    background: ${theme.colors.bg};
+  `}
 `
 
 export const HeaderTitle = styled.span`
   ${({ theme }) => css`
-    padding-left: 20px;
+    padding-left: 2rem;
     color: ${theme.colors.font};
     font-size: ${theme.font.sizes.medium};
   `}
@@ -77,13 +87,13 @@ const alertListContainerModifiers = {
     align-items: center;
   `,
   one: () => css`
-    height: 100px;
+    height: 10rem;
   `,
   two: () => css`
-    height: 200px;
+    height: 20rem;
   `,
   threeMore: () => css`
-    height: 275px;
+    height: 27.5rem;
     overflow-y: scroll;
   `
 }
@@ -91,11 +101,18 @@ const alertListContainerModifiers = {
 export const AlertListContainer = styled.div<AlertListContainerProps>`
   ${({ $quantity }) => css`
     width: 100%;
-    cursor: pointer;
-    ${$quantity == 0 && alertListContainerModifiers.empty()}
-    ${$quantity == 1 && alertListContainerModifiers.one()}
-    ${$quantity == 2 && alertListContainerModifiers.two()}
-    ${$quantity >= 3 && alertListContainerModifiers.threeMore()}
+    /* cursor: pointer; */
+
+    ${media.greaterThan('medium')`
+      ${$quantity == 0 && alertListContainerModifiers.empty()}
+      ${$quantity == 1 && alertListContainerModifiers.one()}
+      ${$quantity == 2 && alertListContainerModifiers.two()}
+      ${$quantity >= 3 && alertListContainerModifiers.threeMore()}
+    `}
+
+    ${media.lessThan('medium')`
+      overflow-y: scroll;
+    `}
   `}
 `
 
@@ -116,6 +133,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
     display: flex;
     align-items: center;
     flex-direction: row;
+    cursor: pointer;
 
     &:last-child {
       border-radius: 0 0 5px 5px;

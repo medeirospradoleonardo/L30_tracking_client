@@ -9,9 +9,20 @@ export type ModalProps = {
   title?: string
   isOpen: boolean
   closeModal: () => void
+  onTop?: boolean
+  withoutHeader?: boolean
+  full?: boolean
 }
 
-const Modal = ({ children, title, isOpen, closeModal }: ModalProps) => {
+const Modal = ({
+  children,
+  title,
+  isOpen,
+  closeModal,
+  onTop = false,
+  withoutHeader = false,
+  full = false
+}: ModalProps) => {
   const { changeIsOverlay } = useTheme()
   const closeModalRequest = () => {
     // document.removeEventListener('keydown', keyDownHandler)
@@ -36,20 +47,22 @@ const Modal = ({ children, title, isOpen, closeModal }: ModalProps) => {
 
   return (
     <S.Wrapper $isOpen={isOpen}>
-      <S.Overlay aria-hidden={!isOpen} onClick={closeModal}>
-        <S.Modal onClick={(e) => e.stopPropagation()}>
-          <S.ModalHeader>
-            {title && (
-              <S.Left>
-                <h3>{title}</h3>
-              </S.Left>
-            )}
-            <S.Right>
-              <S.Icon onClick={closeModal}>
-                <HiOutlineXMark size={25} />
-              </S.Icon>
-            </S.Right>
-          </S.ModalHeader>
+      <S.Overlay aria-hidden={!isOpen} onClick={closeModal} $onTop={onTop}>
+        <S.Modal onClick={(e) => e.stopPropagation()} $full={full}>
+          {!withoutHeader && (
+            <S.ModalHeader>
+              {title && (
+                <S.Left>
+                  <h3>{title}</h3>
+                </S.Left>
+              )}
+              <S.Right>
+                <S.Icon onClick={closeModal}>
+                  <HiOutlineXMark size={25} />
+                </S.Icon>
+              </S.Right>
+            </S.ModalHeader>
+          )}
           {children}
         </S.Modal>
       </S.Overlay>
