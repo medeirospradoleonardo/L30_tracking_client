@@ -24,6 +24,7 @@ const Modal = ({
   full = false
 }: ModalProps) => {
   const { changeIsOverlay } = useTheme()
+
   const closeModalRequest = () => {
     // document.removeEventListener('keydown', keyDownHandler)
   }
@@ -44,6 +45,10 @@ const Modal = ({
   useEffect(() => {
     isOpen ? changeIsOverlay(true) : changeIsOverlay(false)
   }, [isOpen])
+
+  // if (!isOpen) {
+  //   return null
+  // }
 
   return (
     <S.Wrapper $isOpen={isOpen}>

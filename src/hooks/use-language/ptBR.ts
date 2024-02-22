@@ -20,6 +20,17 @@ const languagesPT_BR = {
       notLogged: 'Você precisa estar logado para ver as notificações',
       deleteButton: 'Excluir'
     },
+    UserDropDown: {
+      myProfile: 'Meu perfil',
+      myOrders: 'Minhas encomendas',
+      addOrder: 'Adicionar encomenda',
+      config: 'Configurações',
+      signOut: 'Sair',
+      labelContact: 'Fale conosco',
+      labelTracking: 'Rastreie uma encomenda',
+      buttonSignIn: 'Entrar',
+      buttonSignOut: 'Criar conta'
+    },
     UserList: {
       myProfile: 'Meu perfil',
       myOrders: 'Minhas encomendas',

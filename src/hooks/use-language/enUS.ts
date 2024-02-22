@@ -20,6 +20,17 @@ const languagesEN_US = {
       notLogged: 'You need to be logged in to see notifications',
       deleteButton: 'Remove'
     },
+    UserDropDown: {
+      myProfile: 'My profile',
+      myOrders: 'My orders',
+      addOrder: 'Add order',
+      config: 'Settings',
+      signOut: 'Exit',
+      labelContact: 'Contact us',
+      labelTracking: 'Track an order',
+      buttonSignIn: 'Sign In',
+      buttonSignOut: 'Sign Up'
+    },
     UserList: {
       myProfile: 'My profile',
       myOrders: 'My orders',

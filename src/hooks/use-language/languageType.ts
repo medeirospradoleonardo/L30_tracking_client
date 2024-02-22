@@ -18,6 +18,17 @@ export type LanguageType = {
       notLogged: string
       deleteButton: string
     }
+    UserDropDown: {
+      myProfile: string
+      myOrders: string
+      addOrder: string
+      config: string
+      signOut: string
+      labelContact: string
+      labelTracking: string
+      buttonSignIn: string
+      buttonSignOut: string
+    }
     UserList: {
       myProfile: string
       myOrders: string
