@@ -45,6 +45,7 @@ export const Wrapper = styled.div<WrapperProps>`
     margin-left: 10px;
     margin-right: 40px;
     user-select: none;
+    text-decoration: none;
 
     ${!!$size && wrapperModifiers[$size]($isBR)};
     ${!!$hideOnMobile && wrapperModifiers.hideOnMobile};

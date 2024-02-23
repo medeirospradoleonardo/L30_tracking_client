@@ -59,7 +59,7 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 size={25}
                 style={{ marginRight: '10px' }}
               />
-              <S.Label>{language.components.UserDropDown.labelContact}</S.Label>
+              <S.Label>{language.components.UserDropDown.linkContact}</S.Label>
             </S.LabelContainer>
 
             <S.LabelContainer>
@@ -68,9 +68,7 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 size={25}
                 style={{ marginRight: '10px' }}
               />
-              <S.Label>
-                {language.components.UserDropDown.labelTracking}
-              </S.Label>
+              <S.Label>{language.components.UserDropDown.linkTracking}</S.Label>
             </S.LabelContainer>
             <S.Divider />
             {isLogged ? (
@@ -161,7 +159,7 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 size={25}
                 style={{ marginRight: '10px' }}
               />
-              <S.Label>{language.components.UserDropDown.labelContact}</S.Label>
+              <S.Label>{language.components.UserDropDown.linkContact}</S.Label>
             </S.LabelContainer>
             <S.LabelContainer>
               <HiOutlineMagnifyingGlass
@@ -169,9 +167,7 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 size={25}
                 style={{ marginRight: '10px' }}
               />
-              <S.Label>
-                {language.components.UserDropDown.labelTracking}
-              </S.Label>
+              <S.Label>{language.components.UserDropDown.linkTracking}</S.Label>
             </S.LabelContainer>
           </S.Left>
           <S.Right>

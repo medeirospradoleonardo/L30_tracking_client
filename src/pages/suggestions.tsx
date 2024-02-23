@@ -1,7 +1,7 @@
-import Home from 'templates/Home'
+import Suggestions from 'templates/Suggestions'
 
 export default function Index() {
-  return <Home />
+  return <Suggestions />
 }
 
 export async function getStaticProps() {

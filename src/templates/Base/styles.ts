@@ -5,39 +5,44 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-between;
 `
 
 export const Header = styled.header`
-  /* this is required for "sticky" to work  */
-  /* top: 0; */
   ${({ theme }) => css`
     z-index: ${theme.layers.menu};
   `}
   position: fixed;
   width: 100%;
+  height: min-content;
 `
 
 export const Content = styled.main`
+  overflow-y: auto;
+  margin-top: 45px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   ${({ theme }) => css`
-    /* margin-top: ${theme.spacings.large}; */
-    margin-top: 45px;
-    /* margin-top: 1px; */
-    /* flex: 1 0 auto; */
-    /* flex-grow: 1; */
+    background: ${theme.colors.bg};
   `}
+`
+
+export const Children = styled.div`
+  flex: 1 0 auto;
 `
 
 export const SectionFooter = styled.section`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.large};
-    padding-bottom: ${theme.spacings.xsmall};
-    padding-top: ${theme.spacings.xxlarge};
-    background: ${theme.colors.white};
+    /* margin-top: ${theme.spacings.large}; */
+    /* padding-bottom: ${theme.spacings.xsmall};
+    padding-top: ${theme.spacings.xxlarge}; */
+    background: ${theme.colors.background};
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
     ${media.greaterThan('medium')`
       padding-top: calc(${theme.spacings.xxlarge} * 2);
       clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0 100%);
     `}
+    height: min-content;
   `}
 `

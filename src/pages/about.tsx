@@ -1,7 +1,7 @@
-import Home from 'templates/Home'
+import About from 'templates/About'
 
 export default function Index() {
-  return <Home />
+  return <About />
 }
 
 export async function getStaticProps() {

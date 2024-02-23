@@ -1,7 +1,7 @@
-import Home from 'templates/Home'
+import Tracking from 'templates/Tracking'
 
 export default function Index() {
-  return <Home />
+  return <Tracking />
 }
 
 export async function getStaticProps() {

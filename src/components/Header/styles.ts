@@ -9,7 +9,7 @@ export const Container = styled.div`
     background: ${theme.colors.background};
   `}
   display: flex;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 `
 
 export const LogoWrapper = styled.div`

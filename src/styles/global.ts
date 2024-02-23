@@ -1,11 +1,18 @@
 import { createGlobalStyle, css, DefaultTheme } from 'styled-components'
-import { Wrapper as WrapperBase } from 'templates/Base/styles'
 
 type GlobalStylesProps = {
   theme?: DefaultTheme
   $removeBg?: boolean
   $isTransition?: boolean
   $isOverlay?: boolean
+}
+
+const BaseModifiers = {
+  modal: () => css`
+    overflow: hidden;
+    position: static;
+    height: auto;
+  `
 }
 
 const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
@@ -71,33 +78,29 @@ const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
         font-size: 62.5%;
       }
 
-      ${WrapperBase} {
-        overflow: ${$isOverlay ? 'hidden' : 'visible'};
-      }
-
       body {
         font-family: ${theme.font.family};
         font-size: ${theme.font.sizes.medium};
-        /* overflow: scroll; */
+
+        /* ${$isOverlay && BaseModifiers.modal()}; */
 
         ${!$removeBg &&
         css`
           background: ${theme.colors.background};
         `}
       }
-
       &::-webkit-scrollbar {
         width: 8px;
+        background: ${theme.colors.bg};
       }
 
       &::-webkit-scrollbar-thumb {
         background: ${theme.colors.scroll};
         border-radius: ${theme.border.radius};
-        margin-right: 2px;
       }
       &::-webkit-scrollbar-thumb:hover {
         background: ${theme.colors.scrollHover};
-        maxheight: 10px;
+        max-height: 10px;
       }
     `}
   `

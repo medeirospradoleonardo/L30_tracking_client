@@ -25,7 +25,6 @@ const Dropdown = ({ title, children }: DropdownProps) => {
       >
         {children}
       </S.Content>
-      {/* <S.Overlay aria-hidden={!isOpen} onClick={() => setIsOpen(!isOpen)} /> */}
     </S.Wrapper>
   )
 }

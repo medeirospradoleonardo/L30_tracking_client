@@ -4,6 +4,7 @@ import { Divider } from 'components/Divider'
 
 import { HiTruck } from 'react-icons/hi2'
 import { useAlert } from 'hooks/use-alert'
+import Heading from 'components/Heading'
 
 type AlertListProps = {
   closeModal?: () => void
@@ -18,9 +19,12 @@ const AlertList = ({ closeModal }: AlertListProps) => {
   return (
     <S.Container>
       <S.Header>
-        <S.HeaderTitle>
+        {/* <S.HeaderTitle>
           {language.components.AlertList.headerTitle}
-        </S.HeaderTitle>
+        </S.HeaderTitle> */}
+        <Heading lineLeft size="small" light>
+          {language.components.AlertList.headerTitle}
+        </Heading>
         {logged && (
           <S.AllRead>{language.components.AlertList.headerAllRead}</S.AllRead>
         )}

@@ -1,7 +1,7 @@
-import Home from 'templates/Home'
+import Faq from 'templates/FAQ'
 
 export default function Index() {
-  return <Home />
+  return <Faq />
 }
 
 export async function getStaticProps() {

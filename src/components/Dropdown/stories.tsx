@@ -11,8 +11,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    title: 'Click here',
-    children: 'content'
+    title: <h1>Click here</h1>,
+    children: <h1>Content</h1>
   }
 } satisfies Meta<typeof Dropdown>
 

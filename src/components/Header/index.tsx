@@ -13,7 +13,7 @@ import Logo from 'components/Logo'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
-  const [isLogged] = useState(true)
+  const [isLogged] = useState(false)
   const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
 
   const { language } = useLanguage()
@@ -30,7 +30,9 @@ const Header = () => {
       <S.Container>
         <S.Left>
           <S.LogoWrapper>
-            <Logo hideOnMobile />
+            <a href="http://localhost:3000" style={{ textDecoration: 'none' }}>
+              <Logo hideOnMobile />
+            </a>
           </S.LogoWrapper>
         </S.Left>
         <S.Center>

@@ -3,6 +3,7 @@ import * as S from './styles'
 
 import { HiOutlineXMark } from 'react-icons/hi2'
 import { useTheme } from 'hooks/use-theme'
+import Heading from 'components/Heading'
 
 export type ModalProps = {
   children: React.ReactNode
@@ -42,9 +43,9 @@ const Modal = ({
   //   document.removeEventListener('keydown', keyDownHandler)
   // }
 
-  useEffect(() => {
-    isOpen ? changeIsOverlay(true) : changeIsOverlay(false)
-  }, [isOpen])
+  // useEffect(() => {
+  //   isOpen ? changeIsOverlay(true) : changeIsOverlay(false)
+  // }, [isOpen])
 
   // if (!isOpen) {
   //   return null
@@ -58,7 +59,10 @@ const Modal = ({
             <S.ModalHeader>
               {title && (
                 <S.Left>
-                  <h3>{title}</h3>
+                  {/* <h3>{title}</h3> */}
+                  <Heading size="medium" lineBottom>
+                    {title}
+                  </Heading>
                 </S.Left>
               )}
               <S.Right>

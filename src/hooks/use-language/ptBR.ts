@@ -10,8 +10,8 @@ const languagesPT_BR = {
       modalLanguage: 'Escolha o seu idioma',
       buttonSignIn: 'Entrar',
       buttonSignOut: 'Criar conta',
-      labelContact: 'Fale conosco',
-      labelTracking: 'Rastreie uma encomenda'
+      linkContact: 'Fale conosco',
+      linkTracking: 'Rastreie uma encomenda'
     },
     AlertList: {
       messageEmpty: 'Sem nenhuma notificação',
@@ -26,8 +26,8 @@ const languagesPT_BR = {
       addOrder: 'Adicionar encomenda',
       config: 'Configurações',
       signOut: 'Sair',
-      labelContact: 'Fale conosco',
-      labelTracking: 'Rastreie uma encomenda',
+      linkContact: 'Fale conosco',
+      linkTracking: 'Rastreie uma encomenda',
       buttonSignIn: 'Entrar',
       buttonSignOut: 'Criar conta'
     },
@@ -40,6 +40,14 @@ const languagesPT_BR = {
     },
     Logo: {
       title: 'Rastreamento'
+    },
+    Footer: {
+      contactUs: 'Fale conosco',
+      socialMedia: 'Redes sociais',
+      linkTracking: 'Rastreie uma encomenda',
+      linkAboutUs: 'Sobre Nós',
+      linkFrequentlyAskedQuestions: 'Dúvidas Frequentes',
+      linkSuggestions: 'Sugestões'
     }
   }
 } as LanguageType

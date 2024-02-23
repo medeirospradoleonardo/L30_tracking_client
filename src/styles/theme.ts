@@ -1,4 +1,8 @@
 const theme = {
+  grid: {
+    container: '130rem',
+    gutter: '3.2rem'
+  },
   border: {
     radius: '0.4rem'
   },

@@ -10,8 +10,8 @@ const languagesEN_US = {
       modalLanguage: 'Choose your language',
       buttonSignIn: 'Sign In',
       buttonSignOut: 'Sign Up',
-      labelContact: 'Contact us',
-      labelTracking: 'Track an order'
+      linkContact: 'Contact us',
+      linkTracking: 'Track an order'
     },
     AlertList: {
       messageEmpty: 'Without any notifications',
@@ -26,8 +26,8 @@ const languagesEN_US = {
       addOrder: 'Add order',
       config: 'Settings',
       signOut: 'Exit',
-      labelContact: 'Contact us',
-      labelTracking: 'Track an order',
+      linkContact: 'Contact us',
+      linkTracking: 'Track an order',
       buttonSignIn: 'Sign In',
       buttonSignOut: 'Sign Up'
     },
@@ -40,6 +40,14 @@ const languagesEN_US = {
     },
     Logo: {
       title: 'Tracking'
+    },
+    Footer: {
+      contactUs: 'Contact us',
+      socialMedia: 'Social media',
+      linkTracking: 'Track an order',
+      linkAboutUs: 'About us',
+      linkFrequentlyAskedQuestions: 'Frequently asked questions',
+      linkSuggestions: 'Suggestions'
     }
   }
 } as LanguageType

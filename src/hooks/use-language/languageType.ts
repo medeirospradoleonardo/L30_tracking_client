@@ -8,8 +8,8 @@ export type LanguageType = {
       modalLanguage: string
       buttonSignIn: string
       buttonSignOut: string
-      labelContact: string
-      labelTracking: string
+      linkContact: string
+      linkTracking: string
     }
     AlertList: {
       messageEmpty: string
@@ -24,8 +24,8 @@ export type LanguageType = {
       addOrder: string
       config: string
       signOut: string
-      labelContact: string
-      labelTracking: string
+      linkContact: string
+      linkTracking: string
       buttonSignIn: string
       buttonSignOut: string
     }
@@ -38,6 +38,14 @@ export type LanguageType = {
     }
     Logo: {
       title: string
+    }
+    Footer: {
+      contactUs: string
+      socialMedia: string
+      linkTracking: string
+      linkAboutUs: string
+      linkFrequentlyAskedQuestions: string
+      linkSuggestions: string
     }
   }
 }

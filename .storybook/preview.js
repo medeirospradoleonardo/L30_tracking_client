@@ -1,5 +1,7 @@
-import { ThemeSwitchProvider } from 'hooks/use-theme'
 import { LanguageSwitchProvider } from 'hooks/use-language'
+import { ThemeSwitchProvider } from 'hooks/use-theme'
+// import { ToastProvider } from 'hooks/use-toast'
+import { AlertProvider } from 'hooks/use-alert'
 
 const preview = {
   parameters: {
@@ -16,7 +18,11 @@ const preview = {
       return (
         <LanguageSwitchProvider>
           <ThemeSwitchProvider>
-            <Story />
+            {/* <ToastProvider> */}
+              <AlertProvider >
+                <Story />
+              </AlertProvider>
+            {/* </ToastProvider> */}
           </ThemeSwitchProvider>
         </LanguageSwitchProvider>
       )
