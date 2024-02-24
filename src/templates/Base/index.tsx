@@ -2,6 +2,7 @@ import Footer from 'components/Footer'
 import * as S from './styles'
 import Header from 'components/Header'
 import { Container } from 'components/Container'
+import Section from 'components/Section'
 
 export type BaseTemplateProps = {
   children: React.ReactNode
@@ -15,11 +16,11 @@ const Base = ({ children }: BaseTemplateProps) => {
       </S.Header>
       <S.Content>
         <S.Children>{children}</S.Children>
-        <S.SectionFooter>
+        <Section>
           <Container>
             <Footer />
           </Container>
-        </S.SectionFooter>
+        </Section>
       </S.Content>
     </S.Wrapper>
   )

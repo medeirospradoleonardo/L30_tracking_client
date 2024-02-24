@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,25 +23,10 @@ export const Content = styled.main`
   flex-direction: column;
   align-items: stretch;
   ${({ theme }) => css`
-    background: ${theme.colors.bg};
+    background: ${theme.colors.background};
   `}
 `
 
 export const Children = styled.div`
   flex: 1 0 auto;
-`
-
-export const SectionFooter = styled.section`
-  ${({ theme }) => css`
-    /* margin-top: ${theme.spacings.large}; */
-    /* padding-bottom: ${theme.spacings.xsmall};
-    padding-top: ${theme.spacings.xxlarge}; */
-    background: ${theme.colors.background};
-    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
-    ${media.greaterThan('medium')`
-      padding-top: calc(${theme.spacings.xxlarge} * 2);
-      clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0 100%);
-    `}
-    height: min-content;
-  `}
 `

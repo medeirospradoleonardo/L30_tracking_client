@@ -22,7 +22,6 @@ export const wrapperModifiers = {
   `,
   lineLeft: (theme: DefaultTheme, lineColor: LineColors | undefined) => css`
     padding-left: ${theme.spacings.xxsmall};
-    margin-left: ${theme.spacings.xxsmall};
     border-left: 0.7rem solid
       ${lineColor != undefined ? theme.colors[lineColor] : 0};
   `,

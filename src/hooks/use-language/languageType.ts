@@ -46,6 +46,9 @@ export type LanguageType = {
       linkAboutUs: string
       linkFrequentlyAskedQuestions: string
       linkSuggestions: string
+      links: string
+      services: string
+      serviceTracking: string
     }
   }
 }

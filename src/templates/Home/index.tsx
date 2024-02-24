@@ -3,14 +3,18 @@ import { useState } from 'react'
 import Base from 'templates/Base'
 
 import * as S from './styles'
+import SectionHero from 'components/SectionHero'
+import SectionAboutProject from 'components/SectionAboutProject'
 
 const Home = () => {
   const toast = useToast()
   const [id, setId] = useState('')
   return (
     <Base>
-      <div style={{ height: '150vh' }}>
-        <S.Section>
+      {/* <div style={{ height: '150vh' }}> */}
+      <SectionHero />
+      <SectionAboutProject />
+      {/* <S.Section>
           <div
             style={{
               cursor: 'pointer',
@@ -162,8 +166,8 @@ const Home = () => {
           >
             Recuse
           </div>
-        </S.Section>
-      </div>
+        </S.Section> */}
+      {/* </div> */}
     </Base>
   )
 }

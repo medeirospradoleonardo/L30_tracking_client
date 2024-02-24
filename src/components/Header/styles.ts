@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 45px;
 
   ${({ theme }) => css`
-    background: ${theme.colors.background};
+    background: ${theme.colors.bg};
   `}
   display: flex;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);

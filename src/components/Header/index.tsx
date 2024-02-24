@@ -10,11 +10,13 @@ import LanguageSwitch from 'components/LanguageSwitch'
 import AlertDropdown from 'components/AlertDropdown'
 import UserDropdown from 'components/UserDropDown'
 import Logo from 'components/Logo'
+import { useRouter } from 'next/router'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
-  const [isLogged] = useState(false)
+  const [isLogged] = useState(true)
   const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
+  const router = useRouter()
 
   const { language } = useLanguage()
 
@@ -30,9 +32,17 @@ const Header = () => {
       <S.Container>
         <S.Left>
           <S.LogoWrapper>
-            <a href="http://localhost:3000" style={{ textDecoration: 'none' }}>
+            <div
+              style={{ cursor: 'pointer' }}
+              onClick={() =>
+                router.push({
+                  pathname: '/',
+                  query: { confirm: true }
+                })
+              }
+            >
               <Logo hideOnMobile />
-            </a>
+            </div>
           </S.LogoWrapper>
         </S.Left>
         <S.Center>

@@ -6,9 +6,6 @@ import * as HeadingStyles from 'components/Heading/styles'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.footer`
-  ${({ theme }) => css`
-    /* background: ${theme.colors.bg}; */
-  `}
   ${HeadingStyles.Wrapper} {
     text-transform: uppercase;
   }
@@ -30,9 +27,10 @@ export const Content = styled.div`
 export const Column = styled.div`
   ${({ theme }) => css`
     a,
-    span {
+    span,
+    div {
       display: block;
-      color: ${darken(0.2, theme.colors.gray)};
+      color: ${theme.colors.darkGray};
       /* color: ${darken(0.2, theme.colors.font)}; */
       text-decoration: none;
       margin-bottom: ${theme.spacings.xxsmall};
@@ -42,15 +40,20 @@ export const Column = styled.div`
       word-wrap: break-word;
       overflow-wrap: break-word;
     }
+    div:hover,
     a:hover {
       text-decoration: underline;
+    }
+
+    div {
+      cursor: pointer;
     }
   `}
 `
 
 export const Copyright = styled.div`
   ${({ theme }) => css`
-    color: ${darken(0.2, theme.colors.gray)};
+    color: ${theme.colors.darkGray};
     font-size: ${theme.font.sizes.xsmall};
     margin-top: ${theme.spacings.large};
     margin-bottom: ${theme.spacings.medium};

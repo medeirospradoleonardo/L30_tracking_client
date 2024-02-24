@@ -1,4 +1,5 @@
 import styled, { DefaultTheme, css } from 'styled-components'
+import * as HeadingStyles from 'components/Heading/styles'
 
 import { darken } from 'polished'
 import media from 'styled-media-query'
@@ -33,6 +34,10 @@ export const Container = styled.div`
       width: 100vw;
       height: calc(100vh - 45px);
     `}
+
+    ${HeadingStyles.Wrapper} {
+      margin-left: ${theme.spacings.xxsmall};
+    }
   `}
 `
 

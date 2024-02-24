@@ -1,19 +1,9 @@
 import { css, styled } from 'styled-components'
-import media from 'styled-media-query'
+import * as BaseStyles from 'templates/Base/styles'
 
 export const Section = styled.div`
   ${({ theme }) => css`
-    margin-bottom: calc(${theme.spacings.xxlarge} * 2);
-    ${media.greaterThan('large')`
-      /* margin-top: -13rem; */
-    `}
-    ${media.greaterThan('medium')`
-      margin-bottom: 0;
-      padding-top: 14rem;
-      padding-bottom: 10rem;
-      background-color: ${theme.colors.bg};
-      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-
-    `}
+    ${BaseStyles.Content}
+    background: ${theme.colors.bg};
   `}
 `

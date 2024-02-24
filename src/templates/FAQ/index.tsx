@@ -21,7 +21,7 @@ const Faq = () => {
       <S.Wrapper>
         <S.Content>
           <Container>
-            <Heading lineLeft>FAQ</Heading>
+            <Heading lineLeft>Dúvidas Frequentes</Heading>
 
             <S.Questions>
               {faq.map(({ question, answer }, index) => (

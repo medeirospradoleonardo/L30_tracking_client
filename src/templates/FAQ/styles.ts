@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.bg};
+    background: ${theme.colors.background};
     color: ${theme.colors.font};
     /* transform: skewY(4deg); */
     height: 100%;

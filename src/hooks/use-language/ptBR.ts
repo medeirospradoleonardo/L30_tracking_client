@@ -47,7 +47,10 @@ const languagesPT_BR = {
       linkTracking: 'Rastreie uma encomenda',
       linkAboutUs: 'Sobre Nós',
       linkFrequentlyAskedQuestions: 'Dúvidas Frequentes',
-      linkSuggestions: 'Sugestões'
+      linkSuggestions: 'Sugestões',
+      links: 'Links',
+      services: 'Serviços',
+      serviceTracking: 'Rastreio'
     }
   }
 } as LanguageType

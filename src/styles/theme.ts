@@ -52,6 +52,7 @@ export const lightTheme = Object.assign(
     colors: {
       primary: '#F26122',
       secondary: '#F67F45',
+      // background: '#F7F7F7',
       background: '#F2F2F2',
       tooltip: '#393E46',
       font: '#000000',
@@ -85,7 +86,7 @@ export const darkTheme = Object.assign(
     colors: {
       primary: '#F26122',
       secondary: '#F67F45',
-      background: '#2E2D2D',
+      background: '#3d3c3c',
       tooltip: '#393E46',
       font: '#FFFFFF',
       fontOp: '#000000',
@@ -103,7 +104,7 @@ export const darkTheme = Object.assign(
       scroll: '#ADADAD',
       scrollHover: '#595959',
       red: '#FF6347',
-      bg: '#414142',
+      bg: '#2E2D2D',
       bgAlpha: 'rgba(250,250,250,.3)',
       bg2: 'rgb(245,245,245)',
       bg3: 'rgb(230,230,230)',

@@ -47,7 +47,10 @@ const languagesEN_US = {
       linkTracking: 'Track an order',
       linkAboutUs: 'About us',
       linkFrequentlyAskedQuestions: 'Frequently asked questions',
-      linkSuggestions: 'Suggestions'
+      linkSuggestions: 'Suggestions',
+      links: 'Links',
+      services: 'Services',
+      serviceTracking: 'Tracking'
     }
   }
 } as LanguageType

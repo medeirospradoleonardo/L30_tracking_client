@@ -2,9 +2,12 @@ import Heading from 'components/Heading'
 import Logo from 'components/Logo'
 import * as S from './styles'
 import { useLanguage } from 'hooks/use-language'
+import { useRouter } from 'next/router'
 
 const Footer = () => {
   const { language } = useLanguage()
+  const router = useRouter()
+
   return (
     <S.Wrapper>
       <Logo />
@@ -56,32 +59,58 @@ const Footer = () => {
 
         <S.Column aria-labelledby="resources">
           <Heading lineColor="secondary" lineBottom size="small" marginBottom>
-            Links
+            {language.components.Footer.links}
           </Heading>
 
           <nav id="resources">
-            <a href="http://localhost:3000/tracking">
+            <div
+              onClick={() =>
+                router.push({
+                  pathname: '/tracking',
+                  query: { confirm: true }
+                })
+              }
+            >
               {language.components.Footer.linkTracking}
-            </a>
-            <a href="http://localhost:3000/about">
+            </div>
+            <div
+              onClick={() =>
+                router.push({
+                  pathname: '/about',
+                  query: { confirm: true }
+                })
+              }
+            >
               {language.components.Footer.linkAboutUs}
-            </a>
-            <a href="http://localhost:3000/faq">
+            </div>
+            <div
+              onClick={() =>
+                router.push({
+                  pathname: '/faq',
+                  query: { confirm: true }
+                })
+              }
+            >
               {language.components.Footer.linkFrequentlyAskedQuestions}
-            </a>
-            <a href="http://localhost:3000/suggestions">
+            </div>
+            <div
+              onClick={() =>
+                router.push({
+                  pathname: '/suggestions',
+                  query: { confirm: true }
+                })
+              }
+            >
               {language.components.Footer.linkSuggestions}
-            </a>
+            </div>
           </nav>
         </S.Column>
 
         <S.Column aria-label="contact">
           <Heading lineColor="secondary" lineBottom size="small" marginBottom>
-            Location
+            {language.components.Footer.services}
           </Heading>
-          <span>Lorem ipsum dolor sit.</span>
-          <span>Lorem Ipsum</span>
-          <span>Lorem, ipsum dolor.</span>
+          <span>{language.components.Footer.serviceTracking}</span>
         </S.Column>
       </S.Content>
       <S.Copyright>Copyright © 2024 L30 LTDA.</S.Copyright>
