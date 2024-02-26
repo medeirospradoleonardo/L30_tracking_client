@@ -4,7 +4,7 @@ import * as S from './styles'
 const Suggestions = () => {
   return (
     <Base>
-      <h1>Suggestions</h1>
+      <S.Wrapper>Suggestions</S.Wrapper>
     </Base>
   )
 }

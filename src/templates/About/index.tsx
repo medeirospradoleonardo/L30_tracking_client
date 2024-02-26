@@ -4,7 +4,7 @@ import * as S from './styles'
 const About = () => {
   return (
     <Base>
-      <h1>About</h1>
+      <S.Wrapper>About</S.Wrapper>
     </Base>
   )
 }

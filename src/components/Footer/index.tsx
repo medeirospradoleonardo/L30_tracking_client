@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <S.Wrapper>
-      <Logo />
+      {/* <Logo /> */}
       <S.Content>
         <S.Column>
           <Heading size="small" lineBottom lineColor="secondary" marginBottom>

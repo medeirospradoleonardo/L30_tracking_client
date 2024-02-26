@@ -18,6 +18,13 @@ export const Content = styled.div`
     gap: ${theme.grid.gutter};
     margin-top: ${theme.spacings.medium};
 
+    align-content: space-around;
+    justify-content: space-around;
+    /* 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; */
+
     ${media.greaterThan('medium')`
         grid-template-columns: repeat(4, 1fr)
     `}
