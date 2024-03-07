@@ -17,7 +17,7 @@ export const Modal = styled.div<ModalProps>`
     background: ${theme.colors.bg};
     color: ${theme.colors.font};
 
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     z-index: ${theme.layers.modal};
 
@@ -96,7 +96,7 @@ export const ModalHeader = styled.div`
   width: 100%;
   ${({ theme }) => css`
     background: ${theme.colors.bg};
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
   `}
   display: flex;
   padding: 10px;

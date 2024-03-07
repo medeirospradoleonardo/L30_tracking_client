@@ -5,6 +5,7 @@ import Base from 'templates/Base'
 import * as S from './styles'
 import SectionHero from 'components/SectionHero'
 import SectionAboutProject from 'components/SectionAboutProject'
+import Section from 'components/Section'
 
 const Home = () => {
   const toast = useToast()
@@ -13,7 +14,9 @@ const Home = () => {
     <Base>
       {/* <div style={{ height: '150vh' }}> */}
       <SectionHero />
-      <SectionAboutProject />
+      <Section color="secondary">
+        <SectionAboutProject />
+      </Section>
       {/* <S.Section>
           <div
             style={{

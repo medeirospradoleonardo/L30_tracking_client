@@ -1,5 +1,10 @@
 export type LanguageType = {
-  pages: []
+  templates: {
+    Auth: {
+      HeaderSignOut: string
+      HeaderSignIn: string
+    }
+  }
   components: {
     Header: {
       tooltipLight: string
@@ -49,6 +54,15 @@ export type LanguageType = {
       links: string
       services: string
       serviceTracking: string
+    }
+    FormSignOut: {
+      InputName: string
+      InputEmail: string
+      InputPassword: string
+      InputConfirmPassword: string
+      ButtonSignUp: string
+      ButtonSignIn: string
+      HaveAccount: string
     }
   }
 }

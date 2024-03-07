@@ -1,7 +1,12 @@
 import { LanguageType } from './languageType'
 
 const languagesEN_US = {
-  pages: [],
+  templates: {
+    Auth: {
+      HeaderSignOut: 'Sign Up',
+      HeaderSignIn: 'Sign In'
+    }
+  },
   components: {
     Header: {
       tooltipLight: 'Light Mode',
@@ -51,6 +56,15 @@ const languagesEN_US = {
       links: 'Links',
       services: 'Services',
       serviceTracking: 'Tracking'
+    },
+    FormSignOut: {
+      InputName: 'Username',
+      InputEmail: 'Email',
+      InputPassword: 'Password',
+      InputConfirmPassword: 'Confirm password',
+      ButtonSignUp: 'Sign up now',
+      ButtonSignIn: 'Sign in',
+      HaveAccount: 'Already have an account?'
     }
   }
 } as LanguageType

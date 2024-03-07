@@ -43,7 +43,7 @@ const wrapperModifiers = {
     &:hover {
       background: ${rgba(theme.colors.primary, 0.2)};
       /* background: ${theme.colors.hover}; */
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusButton};
       color: ${darken(0.05, theme.colors.primary)};
     }
   `,
@@ -68,7 +68,7 @@ export const Wrapper = styled.button<WrapperProps>`
     color: ${theme.colors.white};
     border: 0;
     cursor: pointer;
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusButton};
     padding: ${theme.spacings.xxsmall};
     text-decoration: none;
 

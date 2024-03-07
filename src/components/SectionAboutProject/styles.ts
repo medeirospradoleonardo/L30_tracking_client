@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     display: flex;
     background: ${theme.colors.background};
-    transform: skewY(3deg);
+    /* transform: skewY(3deg); */
 
     ${media.greaterThan('medium')`
       padding: ${theme.spacings.large} 0;
@@ -46,8 +46,12 @@ export const Box = styled.section`
   ${({ theme }) => css`
     color: ${theme.colors.font};
     padding: ${theme.spacings.small};
-    border-radius: ${theme.border.radius};
-    transform: skewY(-3deg);
+
+    border-radius: ${theme.border.radiusCard};
+
+    ${media.lessThan('medium')`
+      margin-top: 50px;
+    `}
 
     ${media.greaterThan('medium')`
       padding: ${theme.spacings.large};

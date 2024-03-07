@@ -74,7 +74,7 @@ export const Container = styled.div<ContainerProps>`
     width: ${$width}px;
     min-height: 64px;
     max-height: 800px;
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
     box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ export const Container = styled.div<ContainerProps>`
     justify-content: center;
     position: relative;
     cursor: ${$closeOnClick ? 'pointer' : 'default'};
-    background: ${theme.colors.gray};
+    background: ${theme.colors.bg};
     animation-name: ${getAnimation($position, $animationEnd)};
     animation-fill-mode: both;
     animation-duration: ${$animationEnd ? '0.5s' : '0.5s'};
@@ -100,7 +100,7 @@ export const ToastHeader = styled.div`
   display: flex;
   padding: 10px;
   ${({ theme }) => css`
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
   `}
 `
 
@@ -163,7 +163,7 @@ export const PromiseIcon = styled.div`
     border-radius: 50%;
 
     ${({ theme }) => css`
-      background: ${theme.colors.gray};
+      background: ${theme.colors.bg};
     `}
   }
 `
@@ -290,7 +290,7 @@ export const ProgressBar = styled.div<ProgressBarProps>`
       top: 0;
       left: 0;
       border-radius: 0px 5px 5px 5px;
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusCard};
 
       ${!!$duration && progressBarModifiers.enable($duration)};
       animation-play-state: ${$isPaused ? 'paused' : 'running'};

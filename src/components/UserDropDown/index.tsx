@@ -122,7 +122,12 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 <Button minimal size="medium" style={{ marginRight: '2px' }}>
                   {language.components.UserDropDown.buttonSignIn}
                 </Button>
-                <Button size="medium" style={{ marginRight: '5px' }}>
+                <Button
+                  size="medium"
+                  style={{ marginRight: '5px' }}
+                  href="/sign-up"
+                  as="a"
+                >
                   {language.components.UserDropDown.buttonSignOut}
                 </Button>
               </S.Center>
@@ -180,7 +185,12 @@ const UserDropdown = ({ firstName, lastName, isLogged }: UserDropdownProps) => {
                 <Button minimal size="small" style={{ marginRight: '2px' }}>
                   {language.components.UserDropDown.buttonSignIn}
                 </Button>
-                <Button size="small" style={{ marginRight: '5px' }}>
+                <Button
+                  size="small"
+                  style={{ marginRight: '5px' }}
+                  href="/sign-up"
+                  as="a"
+                >
                   {language.components.UserDropDown.buttonSignOut}
                 </Button>
               </>

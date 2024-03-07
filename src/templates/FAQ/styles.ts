@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  margin-top: 5rem;
+  padding-top: 5rem;
   /* transform: skewY(-4deg); */
   ${media.lessThan('medium')`
     margin-bottom: 5rem;

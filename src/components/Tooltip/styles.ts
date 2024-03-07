@@ -31,7 +31,7 @@ export const TooltipBox = styled.span<TooltipBoxProps>`
 
   ${({ theme }) => css`
     background: ${theme.colors.tooltip};
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusButton};
   `}
   color: #fff;
   text-align: center;

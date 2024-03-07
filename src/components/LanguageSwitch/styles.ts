@@ -27,7 +27,7 @@ export const LanguageContainer = styled.div`
   &:hover {
     ${({ theme }) => css`
       background: ${rgba(theme.colors.primary, 0.2)};
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusCard};
     `}
   }
 

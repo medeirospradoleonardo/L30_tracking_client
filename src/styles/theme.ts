@@ -4,7 +4,8 @@ const theme = {
     gutter: '3.2rem'
   },
   border: {
-    radius: '0.4rem'
+    radiusButton: '0.4rem',
+    radiusCard: '0.8rem'
   },
   font: {
     family:
@@ -35,8 +36,8 @@ const theme = {
   },
   layers: {
     base: 10,
+    toast: 11,
     menu: 15,
-    toast: 20,
     overlay: 30,
     modal: 40,
     alwaysOnTop: 50
@@ -53,7 +54,7 @@ export const lightTheme = Object.assign(
       primary: '#F26122',
       secondary: '#F67F45',
       // background: '#F7F7F7',
-      background: '#F2F2F2',
+      background: '#F8F8F8',
       tooltip: '#393E46',
       font: '#000000',
       fontOp: '#FFFFFF',
@@ -97,7 +98,7 @@ export const darkTheme = Object.assign(
       lightGray: '#6E6D6D',
       gray: '#595959',
       darkGray: '#ADADAD',
-      darknessGray: '#7B7B7B',
+      darknessGray: '#ADADAD',
       warning: '#F1C40F',
       error: '#E74C3C',
       success: '#07BC0C',

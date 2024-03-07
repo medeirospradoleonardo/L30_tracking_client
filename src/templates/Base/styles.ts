@@ -23,7 +23,7 @@ export const Content = styled.main`
   flex-direction: column;
   align-items: stretch;
   ${({ theme }) => css`
-    background: ${theme.colors.background};
+    background: ${theme.colors.bg};
   `}
 `
 

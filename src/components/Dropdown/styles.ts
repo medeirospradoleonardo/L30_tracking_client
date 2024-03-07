@@ -25,7 +25,7 @@ export const Content = styled.div`
     right: 0;
     top: 2.1rem;
     cursor: pointer;
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
     background: ${theme.colors.bg};
   `}
 `

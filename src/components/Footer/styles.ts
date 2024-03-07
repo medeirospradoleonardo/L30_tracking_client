@@ -18,16 +18,16 @@ export const Content = styled.div`
     gap: ${theme.grid.gutter};
     margin-top: ${theme.spacings.medium};
 
-    align-content: space-around;
-    justify-content: space-around;
-    /* 
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; */
-
     ${media.greaterThan('medium')`
-        grid-template-columns: repeat(4, 1fr)
+    /* grid-template-columns: repeat(4, max-content) */
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
     `}
+
+    &:nth-child() {
+      background: #000;
+    }
   `}
 `
 
@@ -62,7 +62,7 @@ export const Copyright = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.darkGray};
     font-size: ${theme.font.sizes.xsmall};
-    margin-top: ${theme.spacings.large};
+    margin-top: ${theme.spacings.medium};
     margin-bottom: ${theme.spacings.medium};
     text-align: center;
   `}

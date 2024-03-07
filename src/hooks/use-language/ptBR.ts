@@ -1,7 +1,12 @@
 import { LanguageType } from './languageType'
 
 const languagesPT_BR = {
-  pages: [],
+  templates: {
+    Auth: {
+      HeaderSignOut: 'Criar uma conta',
+      HeaderSignIn: 'Entrar'
+    }
+  },
   components: {
     Header: {
       tooltipLight: 'Modo Claro',
@@ -51,6 +56,15 @@ const languagesPT_BR = {
       links: 'Links',
       services: 'Serviços',
       serviceTracking: 'Rastreio'
+    },
+    FormSignOut: {
+      InputName: 'Nome',
+      InputEmail: 'Email',
+      InputPassword: 'Senha',
+      InputConfirmPassword: 'Confirmar senha',
+      ButtonSignUp: 'Criar uma conta',
+      ButtonSignIn: 'Entrar',
+      HaveAccount: 'Já possui uma conta?'
     }
   }
 } as LanguageType

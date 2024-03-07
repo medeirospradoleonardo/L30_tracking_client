@@ -83,7 +83,7 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
 
   const openPromise = (
     title: string,
-    position: PositionOptions = 'top-right'
+    position: PositionOptions = 'top-center'
   ) => {
     const id = generateUEID()
     setToasts((currentToasts) => [

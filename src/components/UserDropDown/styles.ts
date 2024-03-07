@@ -78,7 +78,7 @@ export const MenuMobile = styled.div`
 
   ${({ theme }) => css`
     background: ${theme.colors.bg};
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     ${LabelContainer} {
       justify-content: start;
@@ -108,7 +108,7 @@ export const MenuMobileHeader = styled.div`
     justify-content: center;
     padding: ${theme.spacings.xxsmall};
     /* background: ${theme.colors.lightGray}; */
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
     width: 100%;
 
     color: ${theme.colors.font};
@@ -118,7 +118,7 @@ export const MenuMobileHeader = styled.div`
     &:hover {
       /* background: ${rgba(theme.colors.hover, 0.4)}; */
       background: ${rgba(theme.colors.primary, 0.4)};
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusCard};
       text-decoration: none;
     }
   `}

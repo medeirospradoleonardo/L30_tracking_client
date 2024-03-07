@@ -10,8 +10,8 @@ const Footer = () => {
 
   return (
     <S.Wrapper>
-      {/* <Logo /> */}
       <S.Content>
+        {/* <Logo hideOnMobile /> */}
         <S.Column>
           <Heading size="small" lineBottom lineColor="secondary" marginBottom>
             {language.components.Footer.contactUs}

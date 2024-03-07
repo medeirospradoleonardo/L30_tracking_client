@@ -11,7 +11,7 @@ export const Container = styled.div`
     box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
 
     background: ${theme.colors.bg};
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     &::before {
       content: '';
@@ -33,7 +33,7 @@ export const Header = styled.div`
     justify-content: center;
     padding: ${theme.spacings.xxsmall};
     /* background: ${theme.colors.lightGray}; */
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     color: ${theme.colors.font};
 
@@ -42,7 +42,7 @@ export const Header = styled.div`
     &:hover {
       /* background: ${rgba(theme.colors.hover, 0.4)}; */
       background: ${rgba(theme.colors.primary, 0.4)};
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusCard};
       text-decoration: none;
     }
   `}
@@ -63,7 +63,7 @@ export const HeaderDescription = styled.div`
 export const Content = styled.div`
   ${({ theme }) => css`
     /* background: ${theme.colors.background}; */
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     ${Link}:first-child {
       margin-top: ${theme.spacings.xxsmall};
@@ -104,7 +104,7 @@ export const Link = styled.div`
     &:hover {
       /* background: ${rgba(theme.colors.hover, 0.4)}; */
       background: ${rgba(theme.colors.primary, 0.4)};
-      border-radius: ${theme.border.radius};
+      border-radius: ${theme.border.radiusCard};
       text-decoration: none;
     }
     > svg {

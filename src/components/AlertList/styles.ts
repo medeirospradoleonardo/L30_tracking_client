@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   ${({ theme }) => css`
     background: ${theme.colors.bg};
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radiusCard};
 
     ${media.greaterThan('medium')`
       box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
