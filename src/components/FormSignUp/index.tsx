@@ -5,12 +5,16 @@ import React, { useState } from 'react'
 import { FieldErrors, signUpValidate } from 'utils/validations'
 import { useLanguage } from 'hooks/use-language'
 
+import * as S from './styles'
+
 import {
   HiOutlineUser,
   HiOutlineEnvelope,
-  HiOutlineLockClosed
+  HiOutlineLockClosed,
+  HiOutlineCheck
 } from 'react-icons/hi2'
 import { useToast } from 'hooks/use-toast'
+import Dropdown from 'components/Dropdown'
 
 const FormSignUp = () => {
   const { language } = useLanguage()
@@ -65,14 +69,47 @@ const FormSignUp = () => {
           onInputChange={(v: string) => handleInput('email', v)}
           icon={<HiOutlineEnvelope size={22} />}
         />
-        <TextField
-          name="password"
-          placeholder={language.components.FormSignOut.InputPassword}
-          type="password"
-          error={fieldError?.password}
-          onInputChange={(v: string) => handleInput('password', v)}
-          icon={<HiOutlineLockClosed size={22} />}
-        />
+        <Dropdown
+          openOnClick={true}
+          title={
+            <TextField
+              name="password"
+              placeholder={language.components.FormSignOut.InputPassword}
+              type="password"
+              error={fieldError?.password}
+              onInputChange={(v: string) => handleInput('password', v)}
+              icon={<HiOutlineLockClosed size={22} />}
+            />
+          }
+        >
+          <S.PasswordList>
+            <S.PasswordRule>
+              <S.PasswordRuleCheck $isValid={true}>
+                {true && <HiOutlineCheck />}
+              </S.PasswordRuleCheck>
+              8-30 caracteres
+            </S.PasswordRule>
+            <S.PasswordRule>
+              <S.PasswordRuleCheck $isValid={false}>
+                {false && <HiOutlineCheck />}
+              </S.PasswordRuleCheck>
+              No minimo 1 letra maiuscula
+            </S.PasswordRule>
+            <S.PasswordRule>
+              <S.PasswordRuleCheck $isValid={true}>
+                {true && <HiOutlineCheck />}
+              </S.PasswordRuleCheck>
+              No minimo 1 letra minuscula
+            </S.PasswordRule>
+            <S.PasswordRule>
+              <S.PasswordRuleCheck $isValid={true}>
+                {true && <HiOutlineCheck />}
+              </S.PasswordRuleCheck>
+              No minimo 1 numero
+            </S.PasswordRule>
+          </S.PasswordList>
+        </Dropdown>
+
         <TextField
           name="confirm_password"
           placeholder={language.components.FormSignOut.InputConfirmPassword}
@@ -81,7 +118,6 @@ const FormSignUp = () => {
           onInputChange={(v: string) => handleInput('confirm_password', v)}
           icon={<HiOutlineLockClosed size={22} />}
         />
-
         <Button type="submit" size="large" fullWidth>
           <span>{language.components.FormSignOut.ButtonSignUp}</span>
         </Button>

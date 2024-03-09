@@ -14,7 +14,7 @@ import { useRouter } from 'next/router'
 
 const Header = () => {
   const { saveTheme, isDarkMode } = useTheme()
-  const [isLogged] = useState(false)
+  const [isLogged] = useState(true)
   const [isOpenModalLanguage, setIsOpenModalLanguage] = useState(false)
   const router = useRouter()
 

@@ -82,6 +82,7 @@ export const InputWrapper = styled.div<InputWrapperProps>`
     height: 4rem;
     line-height: 4rem;
     position: relative;
+    width: 100%;
     &:hover {
       outline: 1px solid ${lighten(0.2, theme.colors.primary)};
     }
@@ -224,6 +225,7 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, $error, $disabled }) => css`
+    width: 100%;
     ${$error && wrapperModifiers.error(theme)}
     ${$disabled && wrapperModifiers.disabled(theme)}
   `}

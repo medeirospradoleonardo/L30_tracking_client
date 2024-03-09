@@ -9,9 +9,10 @@ export const Title = styled.div`
   ${({ theme }) => css`
     cursor: pointer;
     position: relative;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     color: ${theme.colors.font};
+    width: 100%;
   `}
 `
 
@@ -27,6 +28,7 @@ export const Content = styled.div`
     cursor: pointer;
     border-radius: ${theme.border.radiusCard};
     background: ${theme.colors.bg};
+    z-index: 10;
   `}
 `
 
@@ -50,10 +52,8 @@ const wrapperModifiers = {
 export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, $isOpen }) => css`
     position: relative;
-    width: max-content;
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
     &:hover {
       ${AlertDropdownIcon}, ${UserIconWrapper} {
         color: ${theme.colors.primary};
@@ -74,5 +74,17 @@ export const Wrapper = styled.div<WrapperProps>`
       ${$isOpen && wrapperModifiers.open()}
       ${!$isOpen && wrapperModifiers.close()}
     }
+  `}
+`
+
+export const Overlay = styled.div`
+  ${({ theme }) => css`
+    background: transparent;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* z-index: ${theme.layers.overlay}; */
   `}
 `
