@@ -2,7 +2,11 @@ import Button from 'components/Button'
 import TextField from 'components/TextField'
 import { FormWrapper, FormLink } from 'components/Form'
 import React, { useState } from 'react'
-import { FieldErrors, signUpValidate } from 'utils/validations'
+import {
+  SignUpFieldErrors,
+  passwordValidate,
+  signUpValidate
+} from 'utils/validations'
 import { useLanguage } from 'hooks/use-language'
 
 import * as S from './styles'
@@ -16,20 +20,43 @@ import {
 import { useToast } from 'hooks/use-toast'
 import Dropdown from 'components/Dropdown'
 
+export type SignUpFields = {
+  name: string
+  email: string
+  password: string
+  confirmPassword: string
+}
+
 const FormSignUp = () => {
   const { language } = useLanguage()
   const { openPromise } = useToast()
 
   const [formError, setFormError] = useState('')
-  const [fieldError, setFieldError] = useState<FieldErrors>({})
-  const [values, setValues] = useState({
-    username: '',
+  const [fieldError, setFieldError] = useState<SignUpFieldErrors>()
+  const [checkPassword, setCheckPassword] = useState({
+    minAndMax: false,
+    leastOneLower: false,
+    leastOneUpper: false,
+    leastOneSpecial: false
+  })
+  const [values, setValues] = useState<SignUpFields>({
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   })
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
+    if (field == 'password') {
+      const errors = passwordValidate(value)
+      setCheckPassword({
+        minAndMax: !errors.min && !errors.max,
+        leastOneLower: !errors.leastOneLower,
+        leastOneUpper: !errors.leastOneUpper,
+        leastOneSpecial: !errors.leastOneSpecial
+      })
+    }
   }
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -40,12 +67,14 @@ const FormSignUp = () => {
 
     const errors = signUpValidate(values)
 
-    if (Object.keys(errors).length) {
+    console.log(errors)
+
+    if (errors && Object.keys(errors).length) {
       setFieldError(errors)
       return
     }
 
-    setFieldError({})
+    setFieldError(null)
 
     // create user
   }
@@ -54,18 +83,18 @@ const FormSignUp = () => {
     <FormWrapper>
       <form onSubmit={handleSubmit}>
         <TextField
-          name="username"
+          name="name"
           placeholder={language.components.FormSignOut.InputName}
           type="text"
-          error={fieldError?.username}
-          onInputChange={(v: string) => handleInput('username', v)}
+          error={fieldError?.name && Object.values(fieldError?.name)[0]}
+          onInputChange={(v: string) => handleInput('name', v)}
           icon={<HiOutlineUser size={22} />}
         />
         <TextField
           name="email"
           placeholder={language.components.FormSignOut.InputEmail}
           type="text"
-          error={fieldError?.email}
+          error={fieldError?.email && Object.values(fieldError?.email)[0]}
           onInputChange={(v: string) => handleInput('email', v)}
           icon={<HiOutlineEnvelope size={22} />}
         />
@@ -76,7 +105,9 @@ const FormSignUp = () => {
               name="password"
               placeholder={language.components.FormSignOut.InputPassword}
               type="password"
-              error={fieldError?.password}
+              error={
+                fieldError?.password && Object.values(fieldError?.password)[0]
+              }
               onInputChange={(v: string) => handleInput('password', v)}
               icon={<HiOutlineLockClosed size={22} />}
             />
@@ -84,28 +115,28 @@ const FormSignUp = () => {
         >
           <S.PasswordList>
             <S.PasswordRule>
-              <S.PasswordRuleCheck $isValid={true}>
-                {true && <HiOutlineCheck />}
+              <S.PasswordRuleCheck $isValid={checkPassword?.minAndMax}>
+                {checkPassword?.minAndMax && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
               8-30 caracteres
             </S.PasswordRule>
             <S.PasswordRule>
-              <S.PasswordRuleCheck $isValid={false}>
-                {false && <HiOutlineCheck />}
+              <S.PasswordRuleCheck $isValid={checkPassword?.leastOneUpper}>
+                {checkPassword?.leastOneUpper && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
               No minimo 1 letra maiuscula
             </S.PasswordRule>
             <S.PasswordRule>
-              <S.PasswordRuleCheck $isValid={true}>
-                {true && <HiOutlineCheck />}
+              <S.PasswordRuleCheck $isValid={checkPassword?.leastOneLower}>
+                {checkPassword?.leastOneLower && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
               No minimo 1 letra minuscula
             </S.PasswordRule>
             <S.PasswordRule>
-              <S.PasswordRuleCheck $isValid={true}>
-                {true && <HiOutlineCheck />}
+              <S.PasswordRuleCheck $isValid={checkPassword?.leastOneSpecial}>
+                {checkPassword?.leastOneSpecial && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
-              No minimo 1 numero
+              No minimo 1 caractere especial
             </S.PasswordRule>
           </S.PasswordList>
         </Dropdown>
@@ -114,8 +145,11 @@ const FormSignUp = () => {
           name="confirm_password"
           placeholder={language.components.FormSignOut.InputConfirmPassword}
           type="password"
-          error={fieldError?.confirm_password}
-          onInputChange={(v: string) => handleInput('confirm_password', v)}
+          error={
+            fieldError?.confirmPassword &&
+            Object.values(fieldError?.confirmPassword)[0]
+          }
+          onInputChange={(v: string) => handleInput('confirmPassword', v)}
           icon={<HiOutlineLockClosed size={22} />}
         />
         <Button type="submit" size="large" fullWidth>

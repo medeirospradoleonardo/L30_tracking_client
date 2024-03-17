@@ -65,7 +65,7 @@ const generateToastComponents = (
   )
 }
 
-const ToastContainer = ({ toasts, limit = false }: ToastContainerProps) => {
+const ToastContainer = ({ toasts, limit = 1 }: ToastContainerProps) => {
   const toastsTopLeft = toasts.filter((t) => t.position == 'top-left')
   const toastsTopRight = toasts.filter((t) => t.position == 'top-right')
   const toastsTopCenter = toasts.filter((t) => t.position == 'top-center')
