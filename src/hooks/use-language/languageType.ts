@@ -56,13 +56,13 @@ export type LanguageType = {
       serviceTracking: string
     }
     FormSignOut: {
-      InputName: string
-      InputEmail: string
-      InputPassword: string
-      InputConfirmPassword: string
-      ButtonSignUp: string
-      ButtonSignIn: string
-      HaveAccount: string
+      inputName: string
+      inputEmail: string
+      inputPassword: string
+      inputConfirmPassword: string
+      buttonSignUp: string
+      buttonSignIn: string
+      haveAccount: string
     }
   }
 }

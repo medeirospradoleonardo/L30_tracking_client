@@ -58,13 +58,13 @@ const languagesEN_US = {
       serviceTracking: 'Tracking'
     },
     FormSignOut: {
-      InputName: 'Username',
-      InputEmail: 'Email',
-      InputPassword: 'Password',
-      InputConfirmPassword: 'Confirm password',
-      ButtonSignUp: 'Sign up now',
-      ButtonSignIn: 'Sign in',
-      HaveAccount: 'Already have an account?'
+      inputName: 'Username',
+      inputEmail: 'Email',
+      inputPassword: 'Password',
+      inputConfirmPassword: 'Confirm password',
+      buttonSignUp: 'Sign up now',
+      buttonSignIn: 'Sign in',
+      haveAccount: 'Already have an account?'
     }
   }
 } as LanguageType

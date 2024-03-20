@@ -20,9 +20,10 @@ export const PasswordList = styled.div`
     padding: 1rem;
     color: ${theme.colors.darknessGray};
     background: ${theme.colors.bg};
+
     border-radius: ${theme.border.radiusCard};
 
-    box-shadow: 8px 12px 24px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 8px 12px 12px 12px rgba(0, 0, 0, 0.15);
     &::before {
       content: '';
       position: absolute;

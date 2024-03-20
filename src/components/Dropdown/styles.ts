@@ -54,6 +54,7 @@ export const Wrapper = styled.div<WrapperProps>`
     position: relative;
     width: 100%;
     height: 100%;
+
     &:hover {
       ${AlertDropdownIcon}, ${UserIconWrapper} {
         color: ${theme.colors.primary};
@@ -85,6 +86,6 @@ export const Overlay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    /* z-index: ${theme.layers.overlay}; */
+    z-index: ${theme.layers.overlay};
   `}
 `

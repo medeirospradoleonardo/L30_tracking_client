@@ -139,7 +139,6 @@ export const Label = styled.label`
 `
 
 export const Buttons = styled.div`
-  /* margin-left: auto; */
   width: min-content;
 
   display: flex;
@@ -186,6 +185,7 @@ export const Icon = styled.div<IconProps>`
     padding-left: 0.9rem;
     color: ${theme.colors.darknessGray};
     order: ${$iconPosition === 'right' ? 1 : 0};
+    cursor: default;
     & > svg {
       width: 100%;
     }
@@ -196,6 +196,7 @@ export const Error = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.red};
     font-size: ${theme.font.sizes.xsmall};
+    cursor: default;
   `}
 `
 

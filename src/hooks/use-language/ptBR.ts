@@ -58,13 +58,13 @@ const languagesPT_BR = {
       serviceTracking: 'Rastreio'
     },
     FormSignOut: {
-      InputName: 'Nome',
-      InputEmail: 'Email',
-      InputPassword: 'Senha',
-      InputConfirmPassword: 'Confirmar senha',
-      ButtonSignUp: 'Criar uma conta',
-      ButtonSignIn: 'Entrar',
-      HaveAccount: 'Já possui uma conta?'
+      inputName: 'Nome',
+      inputEmail: 'Email',
+      inputPassword: 'Senha',
+      inputConfirmPassword: 'Confirmar senha',
+      buttonSignUp: 'Criar uma conta',
+      buttonSignIn: 'Entrar',
+      haveAccount: 'Já possui uma conta?'
     }
   }
 } as LanguageType

@@ -100,13 +100,23 @@ export const signUpValidate = ({
   password,
   confirmPassword
 }: SignUpFields) => {
+  const valiationName = validate(name, 'name').required().min(5).error
+  const valiationEmail = validate(email, 'email').required().min(3).error
+  const valiationPassword = validate(password, 'password')
+    .required()
+    .min(8)
+    .max(30)
+    .leastOneLower().error
+  const valiationConfirmPassword = validate(confirmPassword, 'confirmPassword')
+    .required()
+    .equal(password, 'Senha').error
+
   return {
-    ...validate(name, 'name').required().min(5).error,
-    ...validate(email, 'email').required().min(3).error,
-    ...validate(password, 'password').required().min(8).max(30).leastOneLower()
-      .error,
-    ...validate(confirmPassword, 'confirmPassword')
-      .required()
-      .equal(password, 'Senha').error
+    ...(Object.keys(valiationName.name).length != 0 && valiationName),
+    ...(Object.keys(valiationEmail.email).length != 0 && valiationEmail),
+    ...(Object.keys(valiationPassword.password).length != 0 &&
+      valiationPassword),
+    ...(Object.keys(valiationConfirmPassword.confirmPassword).length != 0 &&
+      valiationConfirmPassword)
   } as SignUpFieldErrors
 }

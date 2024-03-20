@@ -61,7 +61,6 @@ const FormSignUp = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    openPromise('Aguardando resposta')
 
     setFormError('')
 
@@ -74,6 +73,7 @@ const FormSignUp = () => {
       return
     }
 
+    openPromise('Aguardando resposta')
     setFieldError(null)
 
     // create user
@@ -84,7 +84,7 @@ const FormSignUp = () => {
       <form onSubmit={handleSubmit}>
         <TextField
           name="name"
-          placeholder={language.components.FormSignOut.InputName}
+          placeholder={language.components.FormSignOut.inputName}
           type="text"
           error={fieldError?.name && Object.values(fieldError?.name)[0]}
           onInputChange={(v: string) => handleInput('name', v)}
@@ -92,7 +92,7 @@ const FormSignUp = () => {
         />
         <TextField
           name="email"
-          placeholder={language.components.FormSignOut.InputEmail}
+          placeholder={language.components.FormSignOut.inputEmail}
           type="text"
           error={fieldError?.email && Object.values(fieldError?.email)[0]}
           onInputChange={(v: string) => handleInput('email', v)}
@@ -103,7 +103,7 @@ const FormSignUp = () => {
           title={
             <TextField
               name="password"
-              placeholder={language.components.FormSignOut.InputPassword}
+              placeholder={language.components.FormSignOut.inputPassword}
               type="password"
               error={
                 fieldError?.password && Object.values(fieldError?.password)[0]
@@ -143,7 +143,7 @@ const FormSignUp = () => {
 
         <TextField
           name="confirm_password"
-          placeholder={language.components.FormSignOut.InputConfirmPassword}
+          placeholder={language.components.FormSignOut.inputConfirmPassword}
           type="password"
           error={
             fieldError?.confirmPassword &&
@@ -153,12 +153,12 @@ const FormSignUp = () => {
           icon={<HiOutlineLockClosed size={22} />}
         />
         <Button type="submit" size="large" fullWidth>
-          <span>{language.components.FormSignOut.ButtonSignUp}</span>
+          <span>{language.components.FormSignOut.buttonSignUp}</span>
         </Button>
 
         <FormLink>
-          {language.components.FormSignOut.HaveAccount}{' '}
-          <a href="/sign-in">{language.components.FormSignOut.ButtonSignIn}</a>
+          {language.components.FormSignOut.haveAccount}{' '}
+          <a href="/sign-in">{language.components.FormSignOut.buttonSignIn}</a>
         </FormLink>
       </form>
     </FormWrapper>
