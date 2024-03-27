@@ -1,8 +1,10 @@
 export type LanguageType = {
   templates: {
     Auth: {
-      HeaderSignOut: string
+      HeaderSignUp: string
       HeaderSignIn: string
+      HeaderForgotPassword: string
+      HeaderResetPassword: string
     }
   }
   components: {
@@ -63,6 +65,56 @@ export type LanguageType = {
       buttonSignUp: string
       buttonSignIn: string
       haveAccount: string
+      passwordRuleCheck: {
+        minAndMax: string
+        leastOneLower: string
+        leastOneUpper: string
+        leastOneSpecial: string
+      }
+      validation: {
+        name: {
+          required: string
+          min: string
+          max: string
+        }
+        email: {
+          required: string
+          min: string
+          max: string
+          email: string
+        }
+        password: {
+          required: string
+          min: string
+          max: string
+          leastOneLower: string
+          leastOneUpper: string
+          leastOneSpecial: string
+        }
+        confirmPassword: {
+          required: string
+          equal: string
+        }
+      }
+    }
+    FormSignIn: {
+      inputEmail: string
+      inputPassword: string
+      buttonSignIn: string
+      forgotPassword: string
+      buttonSignUp: string
+      notHaveAccount: string
+    }
+    FormForgotPassword: {
+      buttonSendEmail: string
+      validation: {
+        email: {
+          required: string
+          min: string
+          max: string
+          email: string
+        }
+      }
     }
   }
 }

@@ -3,8 +3,10 @@ import { LanguageType } from './languageType'
 const languagesPT_BR = {
   templates: {
     Auth: {
-      HeaderSignOut: 'Criar uma conta',
-      HeaderSignIn: 'Entrar'
+      HeaderSignUp: 'Criar uma conta',
+      HeaderSignIn: 'Entrar',
+      HeaderForgotPassword: 'Solicitar nova senha',
+      HeaderResetPassword: 'Resetar senha'
     }
   },
   components: {
@@ -64,7 +66,57 @@ const languagesPT_BR = {
       inputConfirmPassword: 'Confirmar senha',
       buttonSignUp: 'Criar uma conta',
       buttonSignIn: 'Entrar',
-      haveAccount: 'Já possui uma conta?'
+      haveAccount: 'Já possui uma conta?',
+      passwordRuleCheck: {
+        minAndMax: '8-30 caracteres',
+        leastOneLower: 'No minimo 1 letra minúscula',
+        leastOneUpper: 'No minimo 1 letra maiúscula',
+        leastOneSpecial: 'No minimo 1 caractere especial'
+      },
+      validation: {
+        name: {
+          required: 'Preencha o Nome. Campo vazio.',
+          min: 'O Nome precisa ter no mínimo % caracteres.',
+          max: 'O Nome precisa ter no máximo % caracteres.'
+        },
+        email: {
+          required: 'Preencha o Email. Campo vazio.',
+          min: 'O Email precisa ter no mínimo % caracteres.',
+          max: 'O Email precisa ter no máximo % caracteres.',
+          email: 'Email inválido. Tente novamente.'
+        },
+        password: {
+          required: 'Preencha a Senha. Campo vazio.',
+          min: 'A Senha precisa ter no mínimo % caracteres.',
+          max: 'A Senha precisa ter no máximo % caracteres.',
+          leastOneLower: 'A Senha precisa ter no mínimo 1 letra minúscula.',
+          leastOneUpper: 'A Senha precisa ter no mínimo 1 letra maiúscula.',
+          leastOneSpecial: 'A Senha precisa ter no mínimo 1 caractere especial.'
+        },
+        confirmPassword: {
+          required: 'Preencha o Confirmar senha. Campo vazio.',
+          equal: 'As senhas não são iguais. Tente novamente.'
+        }
+      }
+    },
+    FormSignIn: {
+      inputEmail: 'Email',
+      inputPassword: 'Senha',
+      buttonSignIn: 'Entrar',
+      forgotPassword: 'Esqueceu sua senha?',
+      buttonSignUp: 'Criar uma conta',
+      notHaveAccount: 'Não possui uma conta?'
+    },
+    FormForgotPassword: {
+      buttonSendEmail: 'Enviar email',
+      validation: {
+        email: {
+          required: 'Preencha o Email. Campo vazio.',
+          min: 'O Email precisa ter no mínimo % caracteres.',
+          max: 'O Email precisa ter no máximo % caracteres.',
+          email: 'Email inválido. Tente novamente.'
+        }
+      }
     }
   }
 } as LanguageType

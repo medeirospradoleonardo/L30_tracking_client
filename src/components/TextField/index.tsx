@@ -43,6 +43,7 @@ const TextField = ({
       <S.InputWrapper $isDarkMode={isDarkMode} $hasValue={!!value}>
         {!!icon && <S.Icon $iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input
+          autoComplete="off"
           onChange={onChange}
           value={value}
           $iconPosition={iconPosition}

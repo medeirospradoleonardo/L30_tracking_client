@@ -29,6 +29,7 @@ export const Content = styled.div`
     border-radius: ${theme.border.radiusCard};
     background: ${theme.colors.bg};
     z-index: 10;
+    /* width: 100%; */
   `}
 `
 

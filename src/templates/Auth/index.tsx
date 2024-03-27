@@ -1,33 +1,41 @@
-import Link from 'next/link'
-
 import Heading from 'components/Heading'
-import Logo from 'components/Logo'
+
 import * as S from './styles'
-import Image from 'next/image'
 import { useLanguage } from 'hooks/use-language'
 
 type AuthProps = {
-  signIn: boolean
+  option: 'sign-in' | 'sign-up' | 'forgot-password' | 'reset-password'
   children: React.ReactNode
 }
 
-const Auth = ({ signIn, children }: AuthProps) => {
+const Auth = ({ option, children }: AuthProps) => {
   const { language } = useLanguage()
+
+  const getTemplate = (
+    option: 'sign-in' | 'sign-up' | 'forgot-password' | 'reset-password'
+  ) => {
+    switch (option) {
+      case 'sign-in':
+        return 'HeaderSignIn'
+      case 'sign-up':
+        return 'HeaderSignUp'
+      case 'forgot-password':
+        return 'HeaderForgotPassword'
+      case 'reset-password':
+        return 'HeaderResetPassword'
+      default:
+        return 'HeaderSignIn'
+        break
+    }
+  }
 
   return (
     <S.Wrapper>
       <S.Content>
         <S.ContentWrapper>
-          {/* <a href="/" style={{ textDecoration: 'none' }}>
-            <Logo size="large" />
-          </a> */}
-
           <Heading lineColor="secondary" lineLeft>
-            {signIn
-              ? language.templates.Auth.HeaderSignIn
-              : language.templates.Auth.HeaderSignOut}
+            {language.templates.Auth[getTemplate(option)]}
           </Heading>
-
           {children}
         </S.ContentWrapper>
       </S.Content>

@@ -19,6 +19,7 @@ import {
 } from 'react-icons/hi2'
 import { useToast } from 'hooks/use-toast'
 import Dropdown from 'components/Dropdown'
+import Link from 'next/link'
 
 export type SignUpFields = {
   name: string
@@ -64,7 +65,7 @@ const FormSignUp = () => {
 
     setFormError('')
 
-    const errors = signUpValidate(values)
+    const errors = signUpValidate(values, language)
 
     console.log(errors)
 
@@ -118,25 +119,28 @@ const FormSignUp = () => {
               <S.PasswordRuleCheck $isValid={checkPassword?.minAndMax}>
                 {checkPassword?.minAndMax && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
-              8-30 caracteres
-            </S.PasswordRule>
-            <S.PasswordRule>
-              <S.PasswordRuleCheck $isValid={checkPassword?.leastOneUpper}>
-                {checkPassword?.leastOneUpper && <HiOutlineCheck />}
-              </S.PasswordRuleCheck>
-              No minimo 1 letra maiuscula
+              {language.components.FormSignOut.passwordRuleCheck.minAndMax}
             </S.PasswordRule>
             <S.PasswordRule>
               <S.PasswordRuleCheck $isValid={checkPassword?.leastOneLower}>
                 {checkPassword?.leastOneLower && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
-              No minimo 1 letra minuscula
+              {language.components.FormSignOut.passwordRuleCheck.leastOneLower}
+            </S.PasswordRule>
+            <S.PasswordRule>
+              <S.PasswordRuleCheck $isValid={checkPassword?.leastOneUpper}>
+                {checkPassword?.leastOneUpper && <HiOutlineCheck />}
+              </S.PasswordRuleCheck>
+              {language.components.FormSignOut.passwordRuleCheck.leastOneUpper}
             </S.PasswordRule>
             <S.PasswordRule>
               <S.PasswordRuleCheck $isValid={checkPassword?.leastOneSpecial}>
                 {checkPassword?.leastOneSpecial && <HiOutlineCheck />}
               </S.PasswordRuleCheck>
-              No minimo 1 caractere especial
+              {
+                language.components.FormSignOut.passwordRuleCheck
+                  .leastOneSpecial
+              }
             </S.PasswordRule>
           </S.PasswordList>
         </Dropdown>
@@ -158,7 +162,9 @@ const FormSignUp = () => {
 
         <FormLink>
           {language.components.FormSignOut.haveAccount}{' '}
-          <a href="/sign-in">{language.components.FormSignOut.buttonSignIn}</a>
+          <Link href="/sign-in">
+            {language.components.FormSignOut.buttonSignIn}
+          </Link>
         </FormLink>
       </form>
     </FormWrapper>

@@ -5,7 +5,7 @@ import Base from 'templates/Base'
 export default function SignUp() {
   return (
     <Base>
-      <Auth signIn={false}>
+      <Auth option="sign-up">
         <FormSignUp />
       </Auth>
     </Base>
